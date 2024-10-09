@@ -1,0 +1,165 @@
+/* Colour Palette
+    - E63946
+    - F1FAEE
+    - A8DADC
+    - 457B9D
+    - 1D3557 */
+
+.header {
+    background-color: #F1FAEE; 
+}
+
+body {
+    padding-top: 70px;
+    font-family: 'Arial', sans-serif;
+    background-color: #F1FAEE;
+    color: #1D3557
+}
+
+.footer {
+    background-color: #1D3557; /* Dark blue color */
+}  
+
+h1 {
+    color: #457B9D;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Style the input field */
+.form-control {
+    border-radius: 0.25rem; /* Slightly rounded corners */
+    border: 1px solid #ced4da; /* Subtle border color */
+    padding: 0.75rem 1.25rem; /* Increased padding for better spacing */
+    font-size: 1rem; /* Consistent font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.form-control:focus {
+    border-color: #80bdff; /* Blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Soft blue shadow on focus */
+}
+
+/* Style the button */
+.btn-primary {
+    background-color: #A8DADC; /* Bootstrap primary blue */
+    border-color: #A8DADC;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem; /* Balanced padding */
+    border-radius: 0.25rem; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+}
+
+.btn-primary:hover {
+    background-color: #457B9D; /* Darker blue on hover */
+    border-color: #457B9D;
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.btn-primary:active {
+    background-color: #1D3557; /* Even darker blue on click */
+    border-color: #1D3557;
+    transform: translateY(0); /* Reset position */
+}
+
+/* Add spacing between form elements */
+.form-group {
+    margin-bottom: 1.5rem; /* Increased margin for better spacing */
+}
+
+/* Card customizations */
+.card {
+    border-radius: 0.5rem; /* More pronounced rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    padding: 2rem; /* Increased padding for spaciousness */
+    background-color: #ffffff; /* White background for contrast */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Center the form */
+.container {
+    margin-top: 30px; /* Reduced top margin for better alignment */
+    margin-bottom: 30px; /* Added bottom margin */
+}
+
+/* Alert box custom style */
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+    border-radius: 0.25rem;
+    padding: 1rem; /* Comfortable padding */
+    margin-top: 1rem; /* Space above the alert */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: #A8DADC;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #457B9D !important;
+}
+
+.nav-link {
+    color: #457B9D !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1D3557 !important; /* Blue color on hover */
+}
+
+.nav-link.active {
+    color: #457B9D !important;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem; /* Smaller font on mobile */
+    }
+    
+    .btn-primary {
+        width: 100%; /* Full-width button on mobile */
+    }
+    
+    .card {
+        padding: 1.5rem; /* Reduced padding on mobile */
+    }
+}
+
+/* Custom utility classes */
+.mt-custom {
+    margin-top: 2rem
+}
+
+.mb-custom {
+    margin-bottom: 2rem;
+}
+
+/* Smooth scrolling (optional) */
+html {
+    scroll-behavior: smooth; /* Smooth scroll effect */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
