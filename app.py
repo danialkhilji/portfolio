@@ -12,18 +12,17 @@ def favicon():
 def home():
     return render_template('home.html', message="Enter your name", active_page='home')
 
+@app.route('/career')
+def career():
+    return render_template('career.html', active_page='career')
 
-@app.route('/greet', methods=['POST'])
-def greet():
-    name = request.form['name']
-    greeting_msg = f'Hey {name}!'
-    return render_template('home.html', message=greeting_msg, active_page='home')
+@app.route('/projects')
+def projects():
+    return render_template('projects.html', active_page='projects')
 
-
-@app.route('/about')
-def about():
-    return render_template('about.html', active_page='about')
-
+@app.route('/certificates')
+def certificates():
+    return render_template('certificates.html', active_page='certificates')
 
 if __name__ == '__main__':
     app.run(debug=True)

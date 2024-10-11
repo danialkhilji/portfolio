@@ -1,19 +1,22 @@
 /* Colour Palette
-    - E63946
-    - F1FAEE
-    - A8DADC
-    - 457B9D
-    - 1D3557 */
+    - E63946 red
+    - F1FAEE white
+    - A8DADC very light blue
+    - 457B9D blue
+    - 1D3557 dark blue
+    - ffb703 yellow
+    - fb8500 orange
+    - 4cc9f0 light blue bar colour */
 
 .header {
-    background-color: #F1FAEE; 
+    background-color: #FFFFFF; 
 }
 
 body {
     padding-top: 70px;
     font-family: 'Arial', sans-serif;
-    background-color: #F1FAEE;
-    color: #1D3557
+    background-color: #FFFFFF;
+    color: #1D3557;
 }
 
 .footer {
@@ -43,8 +46,8 @@ h1 {
 
 /* Style the button */
 .btn-primary {
-    background-color: #A8DADC; /* Bootstrap primary blue */
-    border-color: #A8DADC;
+    background-color: #A8DADC; /* Updated to a color matching the theme */
+    border-color: #A8DADC; /* Match border color with background */
     font-size: 1rem;
     padding: 0.5rem 1.5rem; /* Balanced padding */
     border-radius: 0.25rem; /* Slightly rounded corners */
@@ -103,49 +106,64 @@ h1 {
 
 /* Navbar customization */
 .navbar {
-    background-color: #A8DADC;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #4cc9f0; /* Change to your desired color */
+    border-radius: 20px; /* Rounded corners for the floating effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 10px; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    z-index: 1000; /* Ensure the navbar appears above other content */
+    padding: 5px 10px; /* Reduced vertical padding and kept horizontal padding smaller */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center links horizontally */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    width: auto; /* Allow width to be determined by content */
 }
 
+/* Navbar brand */
 .navbar-brand {
     font-weight: bold;
-    color: #457B9D !important;
+    color: #FFFFFF; /* White color for brand */
 }
 
+/* Navbar links */
 .nav-link {
-    color: #457B9D !important;
+    color: #FFFFFF; /* Default text color */
     font-weight: 500;
     transition: color 0.3s ease;
+    margin: 0 10px; /* Adjusted space between navbar items */
 }
 
 .nav-link:hover {
-    color: #1D3557 !important; /* Blue color on hover */
+    color: #1D3557; /* Darker blue on hover */
 }
 
 .nav-link.active {
-    color: #457B9D !important;
+    color: #457B9D; /* Active link color */
     font-weight: 600;
 }
 
 /* Responsive adjustments */
 @media (max-width: 576px) {
-    h1 {
-        font-size: 2rem; /* Smaller font on mobile */
+    /* Adjust navbar for mobile */
+    .navbar {
+        padding: 5px; /* Reduced padding for smaller screens */
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center; /* Center links in the navbar */
+        width: auto; /* Allow width to be determined by content */
     }
-    
-    .btn-primary {
-        width: 100%; /* Full-width button on mobile */
-    }
-    
-    .card {
-        padding: 1.5rem; /* Reduced padding on mobile */
+
+    .nav-link {
+        margin: 5px 0; /* Adjust margins for mobile */
+        width: auto; /* Allow each link to be auto-sized */
+        text-align: center; /* Center text for each link */
     }
 }
 
 /* Custom utility classes */
 .mt-custom {
-    margin-top: 2rem
+    margin-top: 2rem;
 }
 
 .mb-custom {
