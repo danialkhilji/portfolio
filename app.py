@@ -10,14 +10,14 @@ def favicon():
 
 @app.route('/')
 def home():
-    return render_template('index.html', message="Enter your name", active_page='home')
+    return render_template('home.html', message="Enter your name", active_page='home')
 
 
 @app.route('/greet', methods=['POST'])
 def greet():
     name = request.form['name']
     greeting_msg = f'Hey {name}!'
-    return render_template('index.html', message=greeting_msg, active_page='home')
+    return render_template('home.html', message=greeting_msg, active_page='home')
 
 
 @app.route('/about')
