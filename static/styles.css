@@ -8,21 +8,39 @@
     - fb8500 orange
     - 4cc9f0 light blue bar colour */
 
-.header {
-    background-color: #FFFFFF; 
+/* General Reset and Base Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF;
+    color: #1D3557;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 body {
     padding-top: 70px;
-    font-family: 'Arial', sans-serif;
-    background-color: #FFFFFF;
-    color: #1D3557;
+    padding-bottom: 80px;
+    margin: 0; /* Reset margin to avoid unintended gaps */
+    padding: 0; /* Reset padding */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height */
 }
 
-.footer {
-    background-color: #1D3557; /* Dark blue color */
-}  
+main {
+    flex: 1; /* Allow main content to expand and push footer down */
+    margin-bottom: 0; /* Ensure there's no margin at the bottom */
+}
 
+/* Header */
+.header {
+    background-color: #FFFFFF;
+}
+
+/* Typography */
 h1 {
     color: #457B9D;
     font-size: 2.5rem;
@@ -30,138 +48,161 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Style the input field */
+.left-align {
+    text-align: left;
+}
+
+.justify {
+    text-align: justify;
+}
+
+/* Form Styles */
 .form-control {
-    border-radius: 0.25rem; /* Slightly rounded corners */
-    border: 1px solid #ced4da; /* Subtle border color */
-    padding: 0.75rem 1.25rem; /* Increased padding for better spacing */
-    font-size: 1rem; /* Consistent font size */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
-    border-color: #80bdff; /* Blue border on focus */
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Soft blue shadow on focus */
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
-/* Style the button */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Button Styles */
 .btn-primary {
-    background-color: #A8DADC; /* Updated to a color matching the theme */
-    border-color: #A8DADC; /* Match border color with background */
+    background-color: #A8DADC;
+    border-color: #A8DADC;
     font-size: 1rem;
-    padding: 0.5rem 1.5rem; /* Balanced padding */
-    border-radius: 0.25rem; /* Slightly rounded corners */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s;
 }
 
 .btn-primary:hover {
-    background-color: #457B9D; /* Darker blue on hover */
+    background-color: #457B9D;
     border-color: #457B9D;
-    transform: translateY(-2px); /* Slight upward movement on hover */
+    color: #FFFFFF; /* Set hover text color */
+    transform: translateY(-2px);
 }
 
 .btn-primary:active {
-    background-color: #1D3557; /* Even darker blue on click */
+    background-color: #1D3557;
     border-color: #1D3557;
-    transform: translateY(0); /* Reset position */
+    transform: translateY(0);
 }
 
-/* Add spacing between form elements */
-.form-group {
-    margin-bottom: 1.5rem; /* Increased margin for better spacing */
-}
-
-/* Card customizations */
+/* Card Styles */
 .card {
-    border-radius: 0.5rem; /* More pronounced rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
-    padding: 2rem; /* Increased padding for spaciousness */
-    background-color: #ffffff; /* White background for contrast */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+    margin-bottom: 2rem; /* Add spacing below the card */
+    padding: 2rem; /* Maintain padding inside the card */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    background-color: #FFFFFF;
+    transition: box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.5s forwards;
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Center the form */
-.container {
-    margin-top: 30px; /* Reduced top margin for better alignment */
-    margin-bottom: 30px; /* Added bottom margin */
-}
-
-/* Alert box custom style */
+/* Alert Box */
 .alert-info {
     background-color: #d1ecf1;
     border-color: #bee5eb;
     color: #0c5460;
     border-radius: 0.25rem;
-    padding: 1rem; /* Comfortable padding */
-    margin-top: 1rem; /* Space above the alert */
+    padding: 1rem;
+    margin-top: 1rem;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Navbar customization */
-.navbar {
-    background-color: #4cc9f0; /* Change to your desired color */
-    border-radius: 20px; /* Rounded corners for the floating effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    position: fixed; /* Keep the navbar fixed at the top */
-    top: 10px; /* Adjust vertical position */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center alignment */
-    z-index: 1000; /* Ensure the navbar appears above other content */
-    padding: 5px 10px; /* Reduced vertical padding and kept horizontal padding smaller */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center links horizontally */
-    flex-wrap: wrap; /* Allow items to wrap if necessary */
-    width: auto; /* Allow width to be determined by content */
+/* Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 20px; /* Ensure consistent padding within the footer */
+    background-color: #2c2c2c; /* Maintain the footer background */
+    color: white;
 }
 
-/* Navbar brand */
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4cc9f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: auto;
+}
+
 .navbar-brand {
     font-weight: bold;
-    color: #FFFFFF; /* White color for brand */
+    color: #FFFFFF;
 }
 
-/* Navbar links */
 .nav-link {
-    color: #FFFFFF; /* Default text color */
+    color: #FFFFFF;
     font-weight: 500;
     transition: color 0.3s ease;
-    margin: 0 10px; /* Adjusted space between navbar items */
+    margin: 0 10px;
 }
 
 .nav-link:hover {
-    color: #1D3557; /* Darker blue on hover */
+    color: #1D3557;
 }
 
 .nav-link.active {
-    color: #457B9D; /* Active link color */
+    color: #457B9D;
     font-weight: 600;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 576px) {
-    /* Adjust navbar for mobile */
     .navbar {
-        padding: 5px; /* Reduced padding for smaller screens */
-        flex-direction: column; /* Stack items vertically on mobile */
-        align-items: center; /* Center links in the navbar */
-        width: auto; /* Allow width to be determined by content */
+        padding: 5px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav-link {
-        margin: 5px 0; /* Adjust margins for mobile */
-        width: auto; /* Allow each link to be auto-sized */
-        text-align: center; /* Center text for each link */
+        margin: 5px 0;
+        text-align: center;
     }
 }
 
-/* Custom utility classes */
+/* Utility Classes */
 .mt-custom {
     margin-top: 2rem;
 }
@@ -170,11 +211,7 @@ h1 {
     margin-bottom: 2rem;
 }
 
-/* Smooth scrolling (optional) */
-html {
-    scroll-behavior: smooth; /* Smooth scroll effect */
-}
-
+/* Animations */
 @keyframes fadeInUp {
     to {
         opacity: 1;
