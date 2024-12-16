@@ -15,9 +15,10 @@ html, body {
     display: flex;
     flex-direction: column;
     font-family: 'Arial', sans-serif;
-    background-color: #FFFFFF;
+    background-color: #F8F9FA; /* Use white background */
     color: #1D3557;
     scroll-behavior: smooth; /* Smooth scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 body {
@@ -25,9 +26,15 @@ body {
     padding-bottom: 80px;
     margin: 0; /* Reset margin to avoid unintended gaps */
     padding: 0; /* Reset padding */
+    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure full height */
+}
+
+.container, .row, .timeline, .card, .navbar {
+    max-width: 100%; /* Restrict any container to viewport width */
+    overflow-x: hidden; /* Prevent overflow on these elements */
 }
 
 main {
@@ -48,6 +55,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Alignments */
 .left-align {
     text-align: left;
 }
@@ -148,6 +156,185 @@ h1 {
     font-weight: bold;
     color: inherit;
     transition: color 0.3s ease;
+}
+
+/* Base Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+/* Middle line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #457B9D; /* Central line color */
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Timeline Item Styles */
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.timeline-item.left {
+    left: calc(50% - 300px - 50px); /* Adjust for card width and desired gap */
+}
+
+.timeline-item.right {
+    left: calc(50% + 50px); /* Ensure the same gap on the right */
+}
+
+/* Horizontal Line */
+.horizontal-line {
+    position: absolute;
+    top: 50%; /* Align line to the vertical center of the card */
+    width: 50px; /* Length of the horizontal line */
+    height: 2px; /* Thickness of the line */
+    background-color: #457B9D; /* Line color */
+    z-index: 1;
+}
+
+.timeline-item.left .horizontal-line {
+    position: absolute;
+    top: 50%; /* Align vertically to the center of the card */
+    left: 0; /* Start at the right edge of the card */
+    width: calc(50% - 2px); /* Stretch to the center line */
+    height: 2px; /* Thickness of the line */
+    background-color: #457B9D; /* Line color */
+    transform: translateY(-50%); /* Center perfectly */
+    z-index: 0;
+}
+
+.timeline-item.right .horizontal-line {
+    position: absolute;
+    top: 50%; /* Align vertically to the center of the card */
+    right: 0; /* Start at the left edge of the card */
+    width: calc(50% - 2px); /* Stretch to the center line */
+    height: 2px; /* Thickness of the line */
+    background-color: #457B9D; /* Line color */
+    transform: translateY(-50%); /* Center perfectly */
+    z-index: 0;
+}
+
+/* Dot */
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Ensures dot stays on the middle line */
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: #1D3557;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Cards */
+.timeline-item .card {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Hover Effect on Card */
+.timeline-item .card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust position for right-side items */
+.timeline-item.left .card,
+.timeline-item.right .card {
+    margin: 0; /* Reset any extra margins */
+}
+
+/* Timeline Container */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Restrict the width of the timeline */
+    margin: 0 auto;
+    padding: 40px 0; /* Add some space on top and bottom */
+    background-color: transparent;
+}
+
+/* Vertical Line in the Center */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #1D3557; /* Line color */
+    z-index: 1;
+}
+
+/* Timeline Cards */
+.timeline-card {
+    position: relative;
+    width: 45%; /* Cards should take up 45% of the container's width */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.timeline-card.left {
+    float: left;
+    margin-left: 10%; /* Adjust left card position */
+}
+
+.timeline-card.right {
+    float: right;
+    margin-right: 10%; /* Adjust right card position */
+}
+
+/* Clearfix */
+.timeline-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .timeline {
+        padding: 20px 0;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        margin-left: 0;
+    }
+
+    .timeline-item .card {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .timeline::before {
+        left: 10px;
+        transform: none;
+        width: 2px;
+    }
 }
 
 /* Navbar */
