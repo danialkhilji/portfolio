@@ -167,7 +167,7 @@ h1 {
     overflow: hidden;
 }
 
-/* Middle line */
+/* Vertical line */
 .timeline::before {
     content: "";
     position: absolute;
@@ -202,29 +202,19 @@ h1 {
     width: 50px; /* Length of the horizontal line */
     height: 2px; /* Thickness of the line */
     background-color: #457B9D; /* Line color */
-    z-index: 1;
+    transform: translateY(-50%); /* Center perfectly */
+    z-index: 0;
 }
 
 .timeline-item.left .horizontal-line {
-    position: absolute;
-    top: 50%; /* Align vertically to the center of the card */
     left: 0; /* Start at the right edge of the card */
-    width: calc(50% - 2px); /* Stretch to the center line */
-    height: 2px; /* Thickness of the line */
-    background-color: #457B9D; /* Line color */
-    transform: translateY(-50%); /* Center perfectly */
-    z-index: 0;
+    width: calc(50% - 250px); /* Stretch to the center line */
 }
 
 .timeline-item.right .horizontal-line {
-    position: absolute;
-    top: 50%; /* Align vertically to the center of the card */
-    right: 0; /* Start at the left edge of the card */
-    width: calc(50% - 2px); /* Stretch to the center line */
-    height: 2px; /* Thickness of the line */
-    background-color: #457B9D; /* Line color */
-    transform: translateY(-50%); /* Center perfectly */
-    z-index: 0;
+    left: 0;
+    width: calc(50% - 250px);
+    /*transform: scaleX(-1);*/
 }
 
 /* Dot */
