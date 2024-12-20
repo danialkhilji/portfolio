@@ -168,23 +168,42 @@ h1 {
 }
 
 /* Vertical line */
-.timeline::before {
-    content: "";
+.timeline::after {
+    content: '';
     position: absolute;
+    width: 6px;
+    background-color: white;
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 2px;
-    background-color: #457B9D; /* Central line color */
-    transform: translateX(-50%);
-    z-index: 1;
 }
 
 /* Timeline Item Styles */
 .timeline-item {
     position: relative;
     margin-bottom: 30px;
-    overflow: hidden;
+}
+
+/* Dots on center line */
+.dot-left, .dot-right {
+    position: absolute;
+    top: 20%;
+    width: 12px;
+    height: 12px;
+    background-color: #023047;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Left Dots */
+.dot-left {
+    left: calc(50% - 255px); /* Position left of the center line */
+}
+
+/* Right Dots */
+.dot-right {
+    left: calc(50% - 655px); /* Position right of the center line */
 }
 
 .timeline-item.left {
@@ -193,41 +212,6 @@ h1 {
 
 .timeline-item.right {
     left: calc(50% + 50px); /* Ensure the same gap on the right */
-}
-
-/* Horizontal Line */
-.horizontal-line {
-    position: absolute;
-    top: 50%; /* Align line to the vertical center of the card */
-    width: 50px; /* Length of the horizontal line */
-    height: 2px; /* Thickness of the line */
-    background-color: #457B9D; /* Line color */
-    transform: translateY(-50%); /* Center perfectly */
-    z-index: 0;
-}
-
-.timeline-item.left .horizontal-line {
-    left: 0; /* Start at the right edge of the card */
-    width: calc(50% - 250px); /* Stretch to the center line */
-}
-
-.timeline-item.right .horizontal-line {
-    left: 0;
-    width: calc(50% - 250px);
-    /*transform: scaleX(-1);*/
-}
-
-/* Dot */
-.dot {
-    position: absolute;
-    top: 50%;
-    left: 50%; /* Ensures dot stays on the middle line */
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background-color: #1D3557;
-    border-radius: 50%;
-    z-index: 2;
 }
 
 /* Cards */
