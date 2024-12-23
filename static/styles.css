@@ -219,15 +219,32 @@ h1 {
     content: " ";
     height: 0;
     position: absolute;
-    top: 20%; /* Aligns the arrow vertically */
+    top: 20%;
     width: 0;
     z-index: 1;
-    right: 891px; /* Position near the timeline */
-    border: medium solid #4cc9f0; /* Matches the timeline dot color */
+    right: 890px;
+    border: medium solid #4cc9f0;
+    border-style: solid;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent #4cc9f0;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.1); /* Match card's border color */
+    background-color: transparent;
     transform: translateY(-50%);
-    transition: 0.3s ease; /* Smooth shadow transition */
+    transition: 0.3s ease;
+}
+
+/* Add arrow inner fill to match card background */
+.timeline-item.left::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 20%; /* Center the arrow vertically */
+    width: 0;
+    z-index: 2;
+    right: 892px; /* Align the arrow with the card's edge */
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 9px 0 9px 9px; /* Slightly smaller dimensions to create an inner border */
+    border-color: transparent transparent transparent #FFFF; /* Match card background color */
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -238,15 +255,29 @@ h1 {
     top: 20%; /* Aligns the arrow vertically */
     width: 0;
     z-index: 1;
-    left: -9px; /* Position near the timeline */
+    left: -10px; /* Position near the timeline */
     border: medium solid #4cc9f0; /* Matches the timeline dot color */
     border-style: solid;
     border-width: 10px 10px 10px 0; /* Arrow dimensions */
-    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);*/ /* Add shadow to the arrow */
-    border-color: transparent #4cc9f0 transparent transparent; /* Card's background color */
+    border-color: transparent rgba(0, 0, 0, 0.1) transparent transparent; /* Match card's border color */
     background-color: transparent;
     transform: translateY(-50%);
     transition: 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Add arrow inner fill to match card background */
+.timeline-item.right::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 20%; /* Center the arrow vertically */
+    width: 0;
+    z-index: 2;
+    left: -8px; /* Align the arrow with the card's edge */
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 9px 9px 9px 0; /* Slightly smaller dimensions to create an inner border */
+    border-color: transparent #FFFF transparent transparent; /* Match card background color */
 }
 
 /* Cards */
