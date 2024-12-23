@@ -207,11 +207,46 @@ h1 {
 }
 
 .timeline-item.left {
-    left: calc(50% - 300px - 50px); /* Adjust for card width and desired gap */
+    left: calc(50% - 350px); /* Adjust for card width and desired gap */
 }
 
 .timeline-item.right {
     left: calc(50% + 50px); /* Ensure the same gap on the right */
+}
+
+/* Add arrows to the left container (pointing right) */
+.timeline-item.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 20%; /* Aligns the arrow vertically */
+    width: 0;
+    z-index: 1;
+    right: 891px; /* Position near the timeline */
+    border: medium solid #4cc9f0; /* Matches the timeline dot color */
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #4cc9f0;
+    transform: translateY(-50%);
+    transition: 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Add arrows to the right container (pointing left) */
+.timeline-item.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 20%; /* Aligns the arrow vertically */
+    width: 0;
+    z-index: 1;
+    left: -9px; /* Position near the timeline */
+    border: medium solid #4cc9f0; /* Matches the timeline dot color */
+    border-style: solid;
+    border-width: 10px 10px 10px 0; /* Arrow dimensions */
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);*/ /* Add shadow to the arrow */
+    border-color: transparent #4cc9f0 transparent transparent; /* Card's background color */
+    background-color: transparent;
+    transform: translateY(-50%);
+    transition: 0.3s ease; /* Smooth shadow transition */
 }
 
 /* Cards */
