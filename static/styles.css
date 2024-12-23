@@ -19,6 +19,8 @@ html, body {
     color: #1D3557;
     scroll-behavior: smooth; /* Smooth scrolling */
     overflow-x: hidden; /* Disable horizontal scrolling */
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -27,6 +29,7 @@ body {
     margin: 0; /* Reset margin to avoid unintended gaps */
     padding: 0; /* Reset padding */
     width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure full height */
@@ -140,10 +143,12 @@ h1 {
     text-align: center;
     font-size: 14px;
     padding: 20px 0;
-    margin-top: 0; /* Remove any top margin */
+    /*margin-top: 0;*/ /* Remove any top margin */
+    margin-top: auto; /* Push footer to the bottom only when the content doesn't fill the viewport */
     padding-top: 20px; /* Ensure consistent padding within the footer */
     background-color: #2c2c2c; /* Maintain the footer background */
     color: white;
+    position: relative;
 }
 
 .footer h5 {
