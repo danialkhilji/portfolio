@@ -159,6 +159,16 @@ h1 {
     transition: color 0.3s ease;
 }
 
+/* Icons */
+a i {
+    color: #000; /* Default icon color */
+    transition: color 0.3s ease;
+}
+
+a i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
 /* Timeline Container */
 .timeline-container {
     position: relative;
