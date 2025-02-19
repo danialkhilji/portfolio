@@ -165,6 +165,10 @@ a i {
     transition: color 0.3s ease;
 }
 
+.icon-size {
+    font-size: 1.5rem;
+}
+
 a i:hover {
     color: #007bff; /* Change color on hover */
 }
