@@ -19,8 +19,8 @@ html, body {
     color: #1D3557;
     scroll-behavior: smooth; /* Smooth scrolling */
     overflow-x: hidden; /* Disable horizontal scrolling */
-    /*display: flex;*/
-    /*flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -114,7 +114,6 @@ h1 {
     padding: 2rem; /* Maintain padding inside the card */
     border-radius: 0.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
     background-color: #FFFFFF;
     transition: box-shadow 0.3s ease;
     opacity: 0;
@@ -144,7 +143,6 @@ h1 {
     text-align: center;
     font-size: 14px;
     padding: 20px 0;
-    padding-top: 20px; /* Ensure consistent padding within the footer */
     background-color: #2c2c2c; /* Maintain the footer background */
     color: white;
 }
@@ -161,13 +159,33 @@ h1 {
     transition: color 0.3s ease;
 }
 
+/* Timeline Container */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Restrict the width of the timeline */
+    margin: 0 auto;
+    padding: 40px 0; /* Add some space on top and bottom */
+    /*background-color: transparent;*/
+}
+
 /* Base Timeline Styles */
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 0;
-    overflow: hidden;
+}
+
+/* Vertical Line in the Center */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #1D3557; /* Line color */
+    z-index: 0;
 }
 
 /* Vertical line */
@@ -185,6 +203,18 @@ h1 {
 .timeline-item {
     position: relative;
     margin-bottom: 30px;
+}
+
+/* Cards */
+.timeline-item .card {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
 }
 
 /* Dots on center line */
@@ -225,9 +255,7 @@ h1 {
     position: absolute;
     top: 20%;
     width: 0;
-    z-index: 1;
     border-style: solid;
-    background-color: transparent;
     transform: translateY(-50%);
     transition: 0.3s ease;
     animation: fadeInUpArrows 0.5s forwards;
@@ -253,7 +281,6 @@ h1 {
     position: absolute;
     top: 20%;
     width: 0;
-    z-index: 2;
     border-style: solid;
     transform: translateY(-50%);
     animation: fadeInUpArrows 0.5s forwards;
@@ -271,18 +298,6 @@ h1 {
     border-color: transparent #FFFF transparent transparent; /* Match card background color */
 }
 
-/* Cards */
-.timeline-item .card {
-    margin-bottom: 30px;
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border-radius: 8px;
-}
-
 /* Hover Effect on Card */
 .timeline-item .card:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
@@ -294,32 +309,11 @@ h1 {
     margin: 0; /* Reset any extra margins */
 }
 
-/* Timeline Container */
-.timeline-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px; /* Restrict the width of the timeline */
-    margin: 0 auto;
-    padding: 40px 0; /* Add some space on top and bottom */
-    background-color: transparent;
-}
-
-/* Vertical Line in the Center */
-.timeline-line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: #1D3557; /* Line color */
-    z-index: 1;
-}
-
 /* Timeline Cards */
 .timeline-card {
-    position: relative;
+    /*position: relative;*/
     width: 45%; /* Cards should take up 45% of the container's width */
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -342,6 +336,25 @@ h1 {
     content: "";
     display: table;
     clear: both;
+}
+
+/* Vertical Timeline */
+.timeline-vertical {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-vertical .timeline-item {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeline-vertical .card {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 /* Responsive Styles */
