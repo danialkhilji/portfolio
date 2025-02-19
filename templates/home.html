@@ -7,6 +7,10 @@
     <title>Home - Portfolio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to Bootstrap icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Link to Awesome icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- Link to custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
@@ -70,6 +74,49 @@
             <div class="col-md-6">
                 <div class="card mt-5">
                     <div class="card-body text-center">
+                        <h2 class="card-title">Skills</h2>
+                        <div class="skill-buttons mt-3">
+                            <button class="btn skill-btn">Python</button>
+                            <button class="btn skill-btn">Machine Learning</button>
+                            <button class="btn skill-btn">Data Science</button>
+                            <button class="btn skill-btn">Data Analysis</button>
+                            <button class="btn skill-btn">Computer Vision</button>
+                            <button class="btn skill-btn">Natural Language Processing (NLP)</button>
+                            <button class="btn skill-btn">Language Models (LMs)</button>
+                            <button class="btn skill-btn">Data Engineering</button>
+                            <button class="btn skill-btn">Data Pipelines</button>
+                            <button class="btn skill-btn">SQL</button>
+                            <button class="btn skill-btn">BigQuery ML (GCP)</button>
+                            <button class="btn skill-btn">Snowflake</button>
+                            <button class="btn skill-btn">Data Clean Rooms</button>
+                            <button class="btn skill-btn">Microsoft Azure AI</button>
+                            <button class="btn skill-btn">Google Vertex AI</button>
+                            <button class="btn skill-btn">Data Visualization</button>
+                            <button class="btn skill-btn">Tableau</button>
+                            <button class="btn skill-btn">Google Studio</button>
+                            <button class="btn skill-btn">Flourish</button>
+                            <button class="btn skill-btn">Git (Version Control)</button>
+                            <button class="btn skill-btn">PySpark</button>
+                            <button class="btn skill-btn">R (Programming Language)</button>
+                            <button class="btn skill-btn">R Studio</button>
+                            <button class="btn skill-btn">Flask</button>
+                            <button class="btn skill-btn">Kubeflow</button>
+                            <button class="btn skill-btn">Arduino IDE</button>
+                            <button class="btn skill-btn">C++</button>
+                            <button class="btn skill-btn">Linux OS (Flavours: Ubuntu and Garuda)</button>
+                            <button class="btn skill-btn">Weka</button>
+                            <button class="btn skill-btn">Matlab</button>    
+                            <button class="btn skill-btn">Matlab Simulink</button>                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body text-center">
                         <h2 class="card-title">Publications</h2>
                         <p></p>
                         <h5 class="card-title">Features matching using natural language processing</h5>
@@ -79,7 +126,9 @@
                             This article proposes shows a new hybrid model of a pretrained Natural Language Processing (NLP) based model called BERT used in parallel with a statistical model based on Jaccard similarity to measure the similarity between list of features from two different datasets.
                             This reduces the time required to search for correlations or manually match each feature from one dataset to another.
                         </p>
-                        <a href="https://arxiv.org/abs/2303.12804" target="_blank" rel="noopener noreferrer">Link to paper</a>
+                        <a href="https://arxiv.org/abs/2303.12804" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </a>
                         <p></p>
                         <h5 class="card-title">Analysis Photovoltaic System in Relation to Tracking and Non-Tracking System</h5>
                         <h12 class="card-title">Journal of Fundamentals of Renewable Energy and Applications - Feb 15, 2021</h12>
@@ -96,7 +145,9 @@
                             The accuracy of estimated output of a PV system can be improved by using more accurate solar irradiance data, accurate weather conditions, exact system losses and matched inverter efficiency.
                             The efficiency of a PV system can be improved by using solar trackers, using more efficient solar panels, installing them in a less shaded area, cleaning the panels on regular intervals, and using more efficient electrical components.
                         </p>
-                        <a href="https://clok.uclan.ac.uk/36933/1/36933%20analysis-photovoltaic-system-in-relation-to-tracking-and-nontracking-system.pdf" target="_blank" rel="noopener noreferrer">Link to paper</a>
+                        <a href="https://clok.uclan.ac.uk/36933/1/36933%20analysis-photovoltaic-system-in-relation-to-tracking-and-nontracking-system.pdf" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -107,7 +158,7 @@
                 <div class="card mt-5">
                     <div class="card-body text-center">
                         <h2 class="card-title">Languages</h2>
-                        <p class="card-text">English, Urdu, German, Punjabi</p>
+                        <p class="card-text">🇬🇧 English | 🇵🇰 Urdu | 🇩🇪 German | 🇵🇰 Punjabi</p>
                     </div>
                 </div>
             </div>

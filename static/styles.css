@@ -12,8 +12,6 @@
 html, body {
     height: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
     font-family: 'Arial', sans-serif;
     background-color: #F8F9FA; /* Use white background */
     color: #1D3557;
@@ -30,8 +28,6 @@ body {
     padding: 0; /* Reset padding */
     width: 100%;
     flex: 1;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh; /* Ensure full height */
 }
 
@@ -42,7 +38,6 @@ body {
 
 main {
     flex: 1; /* Allow main content to expand and push footer down */
-    /*margin-bottom: 0;*/ /* Ensure there's no margin at the bottom */
 }
 
 /* Header */
@@ -160,6 +155,10 @@ h1 {
 }
 
 /* Icons */
+a {
+    text-decoration: none; /* Remove underline */
+}
+
 a i {
     color: #000; /* Default icon color */
     transition: color 0.3s ease;
@@ -173,6 +172,24 @@ a i:hover {
     color: #007bff; /* Change color on hover */
 }
 
+.skill-btn {
+    background-color: white; /* Light gray */
+    color: #000; /* Black text */
+    border: 1px solid #6c757d; /* Gray border */
+    padding: 6px 14px;
+    margin: 5px;
+    border-radius: 20px; /* Rounded buttons */
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.skill-btn:hover {
+    background-color: #007bff; /* Blue background */
+    color: white !important; /* White text */
+    border: 1px solid #007bff;
+}
+
 /* Timeline Container */
 .timeline-container {
     position: relative;
@@ -180,7 +197,6 @@ a i:hover {
     max-width: 1200px; /* Restrict the width of the timeline */
     margin: 0 auto;
     padding: 40px 0; /* Add some space on top and bottom */
-    /*background-color: transparent;*/
 }
 
 /* Base Timeline Styles */
@@ -202,7 +218,7 @@ a i:hover {
     z-index: 0;
 }
 
-/* Vertical line */
+/* Vertical line for side by side cards*/
 .timeline::after {
     content: '';
     position: absolute;
@@ -216,7 +232,7 @@ a i:hover {
 /* Timeline Item Styles */
 .timeline-item {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* Cards */
@@ -224,7 +240,7 @@ a i:hover {
     margin-bottom: 30px;
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 310px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -245,20 +261,20 @@ a i:hover {
 
 /* Left Dots */
 .dot-left {
-    left: calc(50% - 255px); /* Position left of the center line */
+    left: calc(50% - 265px); /* Position left of the center line */
 }
 
 /* Right Dots */
 .dot-right {
-    left: calc(50% - 655px); /* Position right of the center line */
+    left: calc(50% - 635px); /* Position right of the center line */
 }
 
 .timeline-item.left {
-    left: calc(50% - 350px); /* Adjust for card width and desired gap */
+    left: calc(50% - 340px); /* Adjust for card width and desired gap */
 }
 
 .timeline-item.right {
-    left: calc(50% + 50px); /* Ensure the same gap on the right */
+    left: calc(50% + 30px); /* Ensure the same gap on the right */
 }
 
 /* Card arrows */
@@ -276,7 +292,7 @@ a i:hover {
 }
 
 .timeline-item.left::before {
-    right: 890px;
+    right: 880px;
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent rgba(0, 0, 0, 0.1);
 }
@@ -301,7 +317,7 @@ a i:hover {
 }
 
 .timeline-item.left::after {
-    right: 892px;
+    right: 882px;
     border-width: 9px 0 9px 9px;
     border-color: transparent transparent transparent #FFFF; /* Match card background color */
 }
@@ -325,9 +341,7 @@ a i:hover {
 
 /* Timeline Cards */
 .timeline-card {
-    /*position: relative;*/
     width: 45%; /* Cards should take up 45% of the container's width */
-    /*margin-bottom: 30px;*/
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -352,7 +366,7 @@ a i:hover {
     clear: both;
 }
 
-/* Vertical Timeline */
+/* Vertical Timeline for one above another card sequence*/
 .timeline-vertical {
     max-width: 800px;
     margin: 0 auto;
