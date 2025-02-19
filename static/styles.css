@@ -105,7 +105,7 @@ h1 {
 
 /* Card Styles */
 .card {
-    margin-bottom: 2rem; /* Add spacing below the card */
+    margin-bottom: 1rem; /* Add spacing below the card */
     padding: 2rem; /* Maintain padding inside the card */
     border-radius: 0.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
