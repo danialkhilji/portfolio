@@ -1,13 +1,3 @@
-/* Colour Palette
-    - E63946 red
-    - F1FAEE white
-    - A8DADC very light blue
-    - 457B9D blue
-    - 1D3557 dark blue
-    - ffb703 yellow
-    - fb8500 orange
-    - 4cc9f0 light blue bar colour */
-
 /* General Reset and Base Styles */
 html {
     height: 100%;
@@ -28,23 +18,14 @@ body {
     flex-direction: column;
 }
 
-.container, .row, .timeline, .card, .navbar {
-    max-width: 100%; /* Restrict any container to viewport width */
-    overflow-x: hidden; /* Prevent overflow on these elements */
-}
-
 main {
     flex: 1; /* Allow main content to expand and push footer down */
-}
-
-/* Header */
-.header {
-    background-color: #FFFFFF;
+    padding-bottom: 1rem;
 }
 
 /* Typography */
 h1 {
-    color: #457B9D;
+    color: #1D3557;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
@@ -57,24 +38,6 @@ h1 {
 
 .justify {
     text-align: justify;
-}
-
-/* Form Styles */
-.form-control {
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
-    padding: 0.75rem 1.25rem;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
 }
 
 /* Button Styles */
@@ -102,11 +65,11 @@ h1 {
 
 /* Card Styles */
 .card {
-    margin-bottom: 1rem; /* Add spacing below the card */
-    padding: 2rem; /* Maintain padding inside the card */
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    background-color: #FFFFFF;
+    margin-bottom: 1rem;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     transition: box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
@@ -114,18 +77,7 @@ h1 {
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Alert Box */
-.alert-info {
-    background-color: #d1ecf1;
-    border-color: #bee5eb;
-    color: #0c5460;
-    border-radius: 0.25rem;
-    padding: 1rem;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
@@ -166,25 +118,27 @@ a i {
 }
 
 a i:hover {
-    color: #007bff; /* Change color on hover */
+    color: #4cc9f0;
 }
 
 .skill-btn {
+    display: inline-block;
     background-color: white; /* Light gray */
     color: #000; /* Black text */
     border: 1px solid #6c757d; /* Gray border */
     padding: 6px 14px;
     margin: 5px;
-    border-radius: 20px; /* Rounded buttons */
+    border-radius: 20px; /* Rounded pills */
     font-weight: 500;
+    cursor: default;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Hover Effect */
 .skill-btn:hover {
-    background-color: #007bff; /* Blue background */
-    color: white !important; /* White text */
-    border: 1px solid #007bff;
+    background-color: #4cc9f0;
+    color: white !important;
+    border: 1px solid #4cc9f0;
 }
 
 /* Timeline Container */
@@ -193,7 +147,7 @@ a i:hover {
     width: 100%;
     max-width: 1200px; /* Restrict the width of the timeline */
     margin: 0 auto;
-    padding: 0 0 40px 0; /* Add space on bottom only */
+    padding: 0;
 }
 
 /* Base Timeline Styles */
@@ -215,15 +169,21 @@ a i:hover {
     z-index: 0;
 }
 
-/* Vertical line for side by side cards*/
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
+/* Timeline Year Markers */
+.timeline-year-marker {
+    position: sticky;
+    top: 80px;
+    z-index: 5;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.timeline-year-marker span {
+    background-color: #F8F9FA;
+    color: #1D3557;
+    padding: 4px 16px;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 /* Timeline Item Styles */
@@ -232,16 +192,12 @@ a i:hover {
     margin-bottom: 10px;
 }
 
-/* Cards */
+/* Timeline Cards */
 .timeline-item .card {
-    margin-bottom: 30px;
     position: relative;
     width: 100%;
     max-width: 310px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border-radius: 8px;
+    z-index: 6;
 }
 
 /* Dots on center line */
@@ -325,35 +281,10 @@ a i:hover {
     border-color: transparent #FFFFFF transparent transparent; /* Match card background color */
 }
 
-/* Hover Effect on Card */
-.timeline-item .card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
 /* Adjust position for right-side items */
 .timeline-item.left .card,
 .timeline-item.right .card {
-    margin: 0; /* Reset any extra margins */
-}
-
-/* Timeline Cards */
-.timeline-card {
-    width: 45%; /* Cards should take up 45% of the container's width */
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-}
-
-.timeline-card.left {
-    float: left;
-    margin-left: 10%; /* Adjust left card position */
-}
-
-.timeline-card.right {
-    float: right;
-    margin-right: 10%; /* Adjust right card position */
+    margin: 0;
 }
 
 /* Clearfix */
@@ -367,7 +298,7 @@ a i:hover {
 .timeline-vertical {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 0 40px 0;
+    padding: 0;
 }
 
 .timeline-vertical .timeline-item {
@@ -376,10 +307,8 @@ a i:hover {
 }
 
 .timeline-vertical .card {
-    width: 80%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 /* Responsive Styles */
@@ -388,21 +317,40 @@ a i:hover {
         padding: 20px 0;
     }
 
+    /* Certificates timeline: stack cards vertically */
     .timeline-item.left,
     .timeline-item.right {
-        left: 0;
+        left: auto;
         margin-left: 0;
     }
 
     .timeline-item .card {
         width: 100%;
+        max-width: 100%;
         margin-left: 0;
+        border-left: 3px solid #1D3557;
     }
 
-    .timeline::before {
-        left: 10px;
-        transform: none;
-        width: 2px;
+    /* Hide timeline center line, arrows, and dots on mobile */
+    .timeline-line {
+        display: none;
+    }
+
+    .dot-left,
+    .dot-right {
+        display: none;
+    }
+
+    .timeline-item.left::before,
+    .timeline-item.left::after,
+    .timeline-item.right::before,
+    .timeline-item.right::after {
+        display: none;
+    }
+
+    /* Projects timeline: hide line, add left accent */
+    .timeline-vertical .card {
+        border-left: 3px solid #1D3557;
     }
 }
 
@@ -413,15 +361,16 @@ a i:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 20px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     z-index: 1000;
     padding: 5px 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-brand {
@@ -430,7 +379,7 @@ a i:hover {
 }
 
 .nav-link {
-    color: #FFFFFF;
+    color: #1D3557;
     font-weight: 500;
     transition: color 0.3s ease;
     margin: 0 10px;
@@ -457,15 +406,6 @@ a i:hover {
         margin: 5px 0;
         text-align: center;
     }
-}
-
-/* Utility Classes */
-.mt-custom {
-    margin-top: 2rem;
-}
-
-.mb-custom {
-    margin-bottom: 2rem;
 }
 
 /* Animations */
