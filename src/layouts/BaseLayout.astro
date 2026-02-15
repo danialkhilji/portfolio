@@ -1,0 +1,35 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/timeline.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  activePage: string;
+}
+
+const {
+  title,
+  description = "Portfolio of Muhammad Danial Khilji - Data Scientist and Machine Learning Engineer",
+  activePage,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body class="min-h-screen m-0 pt-14 w-full font-sans bg-brand-bg text-brand-dark overflow-x-hidden flex flex-col">
+    <Navbar activePage={activePage} />
+    <main class="flex-1 pb-4">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

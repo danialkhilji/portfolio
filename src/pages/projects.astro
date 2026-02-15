@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import TimelineVertical from "../components/TimelineVertical.astro";
+import { projects } from "../data/projects";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout title="Projects - Portfolio" activePage="projects">
+  <div class="max-w-7xl mx-auto px-4 mt-3">
+    <h1 class="text-center text-3xl md:text-4xl font-medium text-brand-dark mb-4">Projects</h1>
+    <TimelineVertical>
+      {projects.map((project) => (
+        <div class="timeline-item relative mb-4">
+          <Card>
+            <div class="text-center">
+              <h5 class="text-lg font-medium">{project.title}</h5>
+              <p class="text-justify">{project.description}</p>
+              {project.contributors && (
+                <p class="text-left">
+                  <b>Other contributors:</b> {project.contributors}
+                </p>
+              )}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} GitHub repository`}>
+                  <Icon name="bi:github" class="w-6 h-6 inline-block" />
+                </a>
+              )}
+            </div>
+          </Card>
+        </div>
+      ))}
+    </TimelineVertical>
+  </div>
+</BaseLayout>

@@ -1,0 +1,129 @@
+/* Timeline Alternating: Left/Right Positioning */
+.timeline-item.left {
+  left: calc(50% - 340px);
+}
+
+.timeline-item.right {
+  left: calc(50% + 30px);
+}
+
+/* Timeline Alternating: Card sizing */
+.timeline-item .card-timeline {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  z-index: 6;
+}
+
+/* Dot positions on center line */
+.dot-left {
+  left: 334px;
+}
+
+.dot-right {
+  left: -36px;
+}
+
+/* Card arrows - left side */
+.timeline-item.left::before,
+.timeline-item.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 20%;
+  width: 0;
+  border-style: solid;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+  animation: fadeInUpArrows 0.5s forwards;
+}
+
+.timeline-item.left::before {
+  left: 310px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.right::before {
+  left: -10px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(0, 0, 0, 0.1) transparent transparent;
+}
+
+/* Arrow shadow (inner fill) */
+.timeline-item.left::after,
+.timeline-item.right::after {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 20%;
+  width: 0;
+  border-style: solid;
+  transform: translateY(-50%);
+  animation: fadeInUpArrows 0.5s forwards;
+}
+
+.timeline-item.left::after {
+  left: 309px;
+  border-width: 9px 0 9px 9px;
+  border-color: transparent transparent transparent #FFFFFF;
+}
+
+.timeline-item.right::after {
+  left: -8px;
+  border-width: 9px 9px 9px 0;
+  border-color: transparent #FFFFFF transparent transparent;
+}
+
+/* Vertical timeline: no arrows */
+.timeline-vertical .timeline-item::before,
+.timeline-vertical .timeline-item::after {
+  display: none;
+}
+
+/* Responsive: collapse timeline on mobile */
+@media (max-width: 767px) {
+  .timeline-item.left,
+  .timeline-item.right {
+    left: auto;
+    margin-left: 0;
+  }
+
+  .timeline-item .card-timeline {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    border-left: 3px solid #1D3557;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+
+  .dot-left,
+  .dot-right {
+    display: none;
+  }
+
+  .timeline-item.left::before,
+  .timeline-item.left::after,
+  .timeline-item.right::before,
+  .timeline-item.right::after {
+    display: none;
+  }
+
+  .timeline-vertical .card {
+    border-left: 3px solid #1D3557;
+  }
+}
+
+@keyframes fadeInUpArrows {
+  from {
+    opacity: 0;
+    transform: translateY(calc(20px - 50%));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
