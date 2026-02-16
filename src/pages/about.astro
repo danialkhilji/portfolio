@@ -3,7 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import SkillBadge from "../components/SkillBadge.astro";
 import CertificationBadge from "../components/CertificationBadge.astro";
-import { skills, languages, publications, featuredCertifications } from "../data/skills";
+import {
+  skills,
+  languages,
+  publications,
+  featuredCertifications,
+} from "../data/skills";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -13,30 +18,42 @@ import { Icon } from "astro-icon/components";
       <div class="w-full md:w-2/3">
         <Card>
           <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-medium text-brand-dark">Muhammad Danial Khilji</h1>
-            <p class="text-lg md:text-xl text-brand-dark mt-1">Data Scientist | Machine Learning Engineer</p>
-            {featuredCertifications.map((cert) => (
-              <CertificationBadge
-                text={cert.text}
-                badgeUrl={cert.badgeUrl}
-                certificateUrl={cert.certificateUrl}
-                badgeAlt={cert.badgeAlt}
-                textSize={cert.textSize}
-              />
-            ))}
-            <h2 class="text-left text-lg font-bold text-brand-dark mt-4">About</h2>
+            <h1 class="text-4xl md:text-5xl font-medium text-brand-dark">
+              Muhammad Danial Khilji
+            </h1>
+            <p class="text-lg md:text-xl text-brand-dark mt-1">
+              Data Scientist | Machine Learning Engineer
+            </p>
+            {
+              featuredCertifications.map((cert) => (
+                <CertificationBadge
+                  text={cert.text}
+                  badgeUrl={cert.badgeUrl}
+                  certificateUrl={cert.certificateUrl}
+                  badgeAlt={cert.badgeAlt}
+                  textSize={cert.textSize}
+                />
+              ))
+            }
+            <h2 class="text-left text-lg font-bold text-brand-dark mt-4">
+              About
+            </h2>
             <p class="text-justify">
-              As a data scientist, mostly working with NLP technologies,
-              with three years of experience in the marketing industry, I am eager to continue growing and learning.
-              With a strong background in electrical engineering and a Master's degree in applied data science,
-              I am well-equipped to tackle any challenge that comes my way.
-              Currently, I am working on maintaining a Python package and helping other teams for taxonomy mapping,
-              where I have the opportunity to put my skills to the test and contribute to meaningful work.
-              I am a hardworking and dedicated professional, always looking for ways to improve and excel in my career.
-              I get to use my analytical, engineering and machine learning skills to make a real difference with
-              an aim to solve problems at hand in the best way possible. It's like I'm Tony Stark in "Iron Man",
-              building something great and using my powers for good (well, data good) with the only difference that
-              I love AI more.
+              As a data scientist, mostly working with NLP technologies, with
+              three years of experience in the marketing industry, I am eager to
+              continue growing and learning. With a strong background in
+              electrical engineering and a Master's degree in applied data
+              science, I am well-equipped to tackle any challenge that comes my
+              way. Currently, I am working on maintaining a Python package and
+              helping other teams for taxonomy mapping, where I have the
+              opportunity to put my skills to the test and contribute to
+              meaningful work. I am a hardworking and dedicated professional,
+              always looking for ways to improve and excel in my career. I get
+              to use my analytical, engineering and machine learning skills to
+              make a real difference with an aim to solve problems at hand in
+              the best way possible. It's like I'm Tony Stark in "Iron Man",
+              building something great and using my powers for good (well, data
+              good) with the only difference that I love AI more.
             </p>
           </div>
         </Card>
@@ -49,9 +66,7 @@ import { Icon } from "astro-icon/components";
           <div class="text-center">
             <h2 class="text-2xl font-semibold text-brand-dark">Skills</h2>
             <div class="mt-3">
-              {skills.map((skill) => (
-                <SkillBadge label={skill} />
-              ))}
+              {skills.map((skill) => <SkillBadge label={skill} />)}
             </div>
           </div>
         </Card>
@@ -63,16 +78,28 @@ import { Icon } from "astro-icon/components";
         <Card class="mt-3">
           <div class="text-center">
             <h2 class="text-2xl font-semibold text-brand-dark">Publications</h2>
-            {publications.map((pub) => (
-              <div class="mt-4">
-                <h5 class="text-lg font-semibold">{pub.title}</h5>
-                <p class="text-sm text-gray-500">{pub.journal} - {pub.date}</p>
-                <p class="text-justify mt-2">{pub.abstract}</p>
-                <a href={pub.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${pub.title} paper`}>
-                  <Icon name="bi:file-earmark-text" class="w-5 h-5 inline-block" />
-                </a>
-              </div>
-            ))}
+            {
+              publications.map((pub) => (
+                <div class="mt-4">
+                  <h5 class="text-lg font-semibold">{pub.title}</h5>
+                  <p class="text-sm text-gray-500">
+                    {pub.journal} - {pub.date}
+                  </p>
+                  <p class="text-justify mt-2">{pub.abstract}</p>
+                  <a
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${pub.title} paper`}
+                  >
+                    <Icon
+                      name="bi:file-earmark-text"
+                      class="w-5 h-5 inline-block"
+                    />
+                  </a>
+                </div>
+              ))
+            }
           </div>
         </Card>
       </div>
@@ -84,9 +111,11 @@ import { Icon } from "astro-icon/components";
           <div class="text-center">
             <h2 class="text-2xl font-semibold text-brand-dark">Languages</h2>
             <div class="mt-3">
-              {languages.map((lang) => (
-                <SkillBadge label={`${lang.flag} ${lang.name}`} />
-              ))}
+              {
+                languages.map((lang) => (
+                  <SkillBadge label={`${lang.flag} ${lang.name}`} />
+                ))
+              }
             </div>
           </div>
         </Card>

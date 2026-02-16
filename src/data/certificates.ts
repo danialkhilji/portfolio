@@ -151,8 +151,7 @@ export const certificatesByYear: CertificateYear[] = [
           '<a href="https://rss.org.uk/" class="underline">Royal Statistical Society</a> certified Professional Data Analyst. Membership ID: 235177',
       },
       {
-        title:
-          "Building Resilient Streaming Analytics Systems on Google Cloud",
+        title: "Building Resilient Streaming Analytics Systems on Google Cloud",
         issuer: "Google Cloud",
         link: "https://www.cloudskillsboost.google/public_profiles/5b0128f3-bdc6-47fe-8864-7fd884b226a6/badges/8859442?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
         isLocal: false,
@@ -170,15 +169,13 @@ export const certificatesByYear: CertificateYear[] = [
         isLocal: false,
       },
       {
-        title:
-          "Preparing for your Professional Data Engineer Journey",
+        title: "Preparing for your Professional Data Engineer Journey",
         issuer: "Google Cloud",
         link: "https://www.cloudskillsboost.google/public_profiles/5b0128f3-bdc6-47fe-8864-7fd884b226a6/badges/9103677?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
         isLocal: false,
       },
       {
-        title:
-          "Serverless Data Processing with Dataflow: Foundations",
+        title: "Serverless Data Processing with Dataflow: Foundations",
         issuer: "Google Cloud",
         link: "https://www.cloudskillsboost.google/public_profiles/5b0128f3-bdc6-47fe-8864-7fd884b226a6/badges/9011212?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
         isLocal: false,
@@ -214,8 +211,7 @@ export const certificatesByYear: CertificateYear[] = [
         isLocal: false,
       },
       {
-        title:
-          "Modernizing Data Lakes and Data Warehouses with Google Cloud",
+        title: "Modernizing Data Lakes and Data Warehouses with Google Cloud",
         issuer: "Google Cloud",
         link: "https://www.cloudskillsboost.google/public_profiles/5b0128f3-bdc6-47fe-8864-7fd884b226a6/badges/8598336?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
         isLocal: false,
@@ -227,15 +223,13 @@ export const certificatesByYear: CertificateYear[] = [
         isLocal: false,
       },
       {
-        title:
-          "Smart Analytics, Machine Learning, and AI on Google Cloud",
+        title: "Smart Analytics, Machine Learning, and AI on Google Cloud",
         issuer: "Google Cloud",
         link: "https://www.cloudskillsboost.google/public_profiles/5b0128f3-bdc6-47fe-8864-7fd884b226a6/badges/8567486?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
         isLocal: false,
       },
       {
-        title:
-          "Engineer Data for Predictive Modeling with BigQuery ML",
+        title: "Engineer Data for Predictive Modeling with BigQuery ML",
         issuer: "Google Cloud",
         link: "https://www.cloudskillsboost.google/public_profiles/5b0128f3-bdc6-47fe-8864-7fd884b226a6/badges/8489015",
         isLocal: false,
@@ -326,8 +320,7 @@ export const certificatesByYear: CertificateYear[] = [
         isLocal: true,
       },
       {
-        title:
-          "Learning Amazon Web Services (AWS) for Developers (2018)",
+        title: "Learning Amazon Web Services (AWS) for Developers (2018)",
         issuer: "LinkedIn",
         link: "/certificates/linkedin/Learning Amazon Web Services AWS for Developers 2018 (CompTIA).pdf",
         isLocal: true,
@@ -454,8 +447,7 @@ export const certificatesByYear: CertificateYear[] = [
       },
       {
         title: "3D reconstruction using 3DF ZEPHYR",
-        issuer:
-          "National University of Sciences and Technology (NUST)",
+        issuer: "National University of Sciences and Technology (NUST)",
         link: "/certificates/3D Construction using 3DF ZEPHYR.pdf",
         isLocal: true,
       },

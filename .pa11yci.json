@@ -1,0 +1,13 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 10000
+  },
+  "urls": [
+    "http://localhost:4321/",
+    "http://localhost:4321/about/",
+    "http://localhost:4321/career/",
+    "http://localhost:4321/projects/",
+    "http://localhost:4321/certificates/"
+  ]
+}

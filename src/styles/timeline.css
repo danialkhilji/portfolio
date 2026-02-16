@@ -1,27 +1,35 @@
+/* Timeline layout variables */
+:root {
+  --tl-card-width: 310px;
+  --tl-gap: 30px;
+  --tl-dot-size: 12px;
+  --tl-arrow-size: 10px;
+}
+
 /* Timeline Alternating: Left/Right Positioning */
 .timeline-item.left {
-  left: calc(50% - 340px);
+  left: calc(50% - var(--tl-card-width) - var(--tl-gap));
 }
 
 .timeline-item.right {
-  left: calc(50% + 30px);
+  left: calc(50% + var(--tl-gap));
 }
 
 /* Timeline Alternating: Card sizing */
 .timeline-item .card-timeline {
   position: relative;
   width: 100%;
-  max-width: 310px;
+  max-width: var(--tl-card-width);
   z-index: 6;
 }
 
 /* Dot positions on center line */
 .dot-left {
-  left: 334px;
+  left: calc(var(--tl-card-width) + var(--tl-gap) - var(--tl-dot-size) / 2);
 }
 
 .dot-right {
-  left: -36px;
+  left: calc(-1 * (var(--tl-gap) + var(--tl-dot-size) / 2));
 }
 
 /* Card shadow using drop-shadow so it wraps around the arrow */
@@ -47,14 +55,14 @@
 }
 
 .timeline-item.left .card-timeline::before {
-  right: -10px;
-  border-width: 10px 0 10px 10px;
+  right: calc(-1 * var(--tl-arrow-size));
+  border-width: var(--tl-arrow-size) 0 var(--tl-arrow-size) var(--tl-arrow-size);
   border-color: transparent transparent transparent white;
 }
 
 .timeline-item.right .card-timeline::before {
-  left: -10px;
-  border-width: 10px 10px 10px 0;
+  left: calc(-1 * var(--tl-arrow-size));
+  border-width: var(--tl-arrow-size) var(--tl-arrow-size) var(--tl-arrow-size) 0;
   border-color: transparent white transparent transparent;
 }
 
@@ -76,7 +84,7 @@
     width: 100%;
     max-width: 100%;
     margin-left: 0;
-    border-left: 3px solid #1D3557;
+    border-left: 3px solid #1d3557;
   }
 
   .timeline-line {
@@ -94,7 +102,6 @@
   }
 
   .timeline-vertical .card {
-    border-left: 3px solid #1D3557;
+    border-left: 3px solid #1d3557;
   }
 }
-

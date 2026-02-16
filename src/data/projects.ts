@@ -48,8 +48,7 @@ export const projects: Project[] = [
     title: "NETFLIX Movie Recommendation",
     description:
       "Used NETFLIX Competition dataset and cleaned for analysis. Then I used Collaborative Filtering and Pearson's R Correlation as two methods of recommendation to build a model. Evaluated performance at the end.",
-    githubUrl:
-      "https://github.com/danialkhilji/NETFLIX-Recommendation-Model",
+    githubUrl: "https://github.com/danialkhilji/NETFLIX-Recommendation-Model",
   },
   {
     title: "Emotional AI: Facial Key-Points Detection",
@@ -79,8 +78,7 @@ export const projects: Project[] = [
       "Harris key-points detector and its robustness to rotation and scaling",
     description:
       "Implemented a Harris key-point detector in Python-3 using OpenCV library. It successfully detected corners in the image. Frequency of corners was varied using the thresholding. Original image corners were compared with the rotated and scaled versions of the identical image. In rotation, image was rotated 24 times, each of 15-degree increment and each time its corners were matched with that of the original image. Similarly, eight scaled images, with scaling factor m=1.2, corners were compared with that of the original. All the results were then plotted to visualize better.",
-    githubUrl:
-      "https://github.com/danialkhilji/Harris-Corner-Detector",
+    githubUrl: "https://github.com/danialkhilji/Harris-Corner-Detector",
   },
   {
     title: "Interactive Foreground Segmentation",

@@ -7,25 +7,38 @@ interface Props {
   textSize?: string;
 }
 
-const { text, badgeUrl, certificateUrl, badgeAlt, textSize = "text-lg md:text-xl" } = Astro.props;
+const {
+  text,
+  badgeUrl,
+  certificateUrl,
+  badgeAlt,
+  textSize = "text-lg md:text-xl",
+} = Astro.props;
 ---
 
-<p class:list={[textSize, "text-brand-dark mt-1 flex items-center justify-center gap-2"]}>
+<p
+  class:list={[
+    textSize,
+    "text-brand-dark mt-1 flex items-center justify-center gap-2",
+  ]}
+>
   {text}
-  {badgeUrl && certificateUrl && (
-    <a
-      href={certificateUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`View ${text} certificate`}
-      class="transition-transform hover:scale-110 duration-200"
-    >
-      <img
-        src={badgeUrl}
-        alt={badgeAlt || `${text} badge`}
-        class="w-8 h-8 inline-block"
-        loading="lazy"
-      />
-    </a>
-  )}
+  {
+    badgeUrl && certificateUrl && (
+      <a
+        href={certificateUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View ${text} certificate`}
+        class="transition-transform hover:scale-110 duration-200"
+      >
+        <img
+          src={badgeUrl}
+          alt={badgeAlt || `${text} badge`}
+          class="w-8 h-8 inline-block"
+          loading="lazy"
+        />
+      </a>
+    )
+  }
 </p>
