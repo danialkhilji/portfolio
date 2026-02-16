@@ -11,7 +11,9 @@ import { Icon } from "astro-icon/components";
         class="flex flex-col-reverse md:flex-row items-center justify-between gap-10"
       >
         <!-- Text content -->
-        <div class="text-center md:text-left md:w-1/2">
+        <div
+          class="text-center md:text-left md:w-1/2 opacity-0 translate-y-5 animate-fadeInUp"
+        >
           <h1
             class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight"
           >
@@ -40,7 +42,9 @@ import { Icon } from "astro-icon/components";
         </div>
 
         <!-- Profile photo -->
-        <div class="md:w-1/2 flex justify-center">
+        <div
+          class="md:w-1/2 flex justify-center opacity-0 translate-y-5 animate-fadeInUp"
+        >
           <img
             src={`${import.meta.env.BASE_URL}image_2.jpg`}
             alt="Muhammad Danial Khilji"
