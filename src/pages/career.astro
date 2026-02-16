@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import TimelineVertical from "../components/TimelineVertical.astro";
+import { careerEntries } from "../data/career";
+---
+
+<BaseLayout title="Career - Portfolio" activePage="career">
+  <div class="max-w-7xl mx-auto px-4 mt-3">
+    <h1
+      class="text-center text-3xl md:text-4xl font-medium text-brand-dark mb-4"
+    >
+      Career
+    </h1>
+    <TimelineVertical>
+      {
+        careerEntries.map((entry) => (
+          <div class="timeline-item relative mb-7">
+            <Card>
+              <div class="text-center">
+                <h5 class="text-lg font-semibold">{entry.title}</h5>
+                <p class="text-sm text-gray-500">
+                  {entry.organization} &middot; {entry.dateRange}
+                </p>
+                {entry.project && (
+                  <p class="text-sm text-gray-500 mt-1">
+                    Project: {entry.project}
+                  </p>
+                )}
+                {(entry.description || entry.bullets) && (
+                  <div class="text-justify mt-4">
+                    {entry.bulletPrefix && <p>{entry.bulletPrefix}</p>}
+                    {entry.description &&
+                      entry.description.map((paragraph, i) => (
+                        <p class={i > 0 ? "mt-2" : ""}>{paragraph}</p>
+                      ))}
+                    {entry.bullets && (
+                      <ul
+                        class:list={[
+                          "list-disc text-left ml-5 space-y-1",
+                          entry.bulletPrefix && "mt-1",
+                        ]}
+                      >
+                        {entry.bullets.map((bullet) => (
+                          <li>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </div>
+            </Card>
+          </div>
+        ))
+      }
+    </TimelineVertical>
+  </div>
+</BaseLayout>

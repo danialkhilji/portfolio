@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimelineAlternating from "../components/TimelineAlternating.astro";
+import TimelineCard from "../components/TimelineCard.astro";
+import TimelineYearMarker from "../components/TimelineYearMarker.astro";
+import { certificatesByYear } from "../data/certificates";
+import { Icon } from "astro-icon/components";
+
+const totalCerts = certificatesByYear.reduce(
+  (sum, yg) => sum + yg.certificates.length,
+  0,
+);
+let cumulative = 0;
+const yearGroupOffsets = certificatesByYear.map((yg) => {
+  const offset = cumulative;
+  cumulative += yg.certificates.length;
+  return offset;
+});
+---
+
+<BaseLayout title="Certificates - Portfolio" activePage="certificates">
+  <div class="max-w-7xl mx-auto px-4 mt-3">
+    <h1
+      class="text-center text-3xl md:text-4xl font-medium text-brand-dark mb-1"
+    >
+      Certificates
+    </h1>
+    <TimelineAlternating>
+      {
+        certificatesByYear.map((yearGroup, yi) => (
+          <div>
+            <TimelineYearMarker year={yearGroup.year} />
+            {yearGroup.certificates.map((cert, index) => {
+              const globalIndex = yearGroupOffsets[yi] + index;
+              const side =
+                (totalCerts - 1 - globalIndex) % 2 === 0 ? "left" : "right";
+              return (
+                <TimelineCard side={side}>
+                  <div class="text-center">
+                    <h5 class="text-lg font-medium">{cert.title}</h5>
+                    {cert.richIssuer ? (
+                      <p class="text-sm" set:html={cert.richIssuer} />
+                    ) : (
+                      <p class="text-sm mt-1 mb-2">{cert.issuer}</p>
+                    )}
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${cert.title} certificate`}
+                    >
+                      <Icon name="bi:award" class="w-6 h-6 inline-block" />
+                    </a>
+                  </div>
+                </TimelineCard>
+              );
+            })}
+          </div>
+        ))
+      }
+    </TimelineAlternating>
+  </div>
+</BaseLayout>

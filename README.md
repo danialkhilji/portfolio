@@ -1,50 +1,78 @@
-# My Flask App
+# Portfolio
 
-A simple and aesthetically pleasing Flask web application with a Home and About page.
+A personal portfolio website built with Astro and Tailwind CSS.
 
-## Table of Contents
+## Tech Stack
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Astro](https://astro.build/) - Static site generator
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [astro-icon](https://github.com/natemoo-re/astro-icon) - Icon integration
 
-## Introduction
+## Project Structure
 
-Welcome to **My Flask App**! This is a basic web application built using the Flask framework. It includes a Home page where users can enter their names to receive a personalized greeting and an About page providing information about the website.
+```
+src/
+├── components/   # Reusable UI components (Navbar, Footer, Cards, Timeline)
+├── data/         # Content data files (career, projects, skills, certificates)
+├── layouts/      # Base page layout
+├── pages/        # Site pages (home, about, career, projects, certificates)
+└── styles/       # Custom CSS (timeline layout)
+```
 
-## Features
+## Getting Started
 
-- **Home Page:** Users can input their names to receive a personalized greeting.
-- **About Page:** Provides information about the website and its purpose.
-- **Responsive Design:** Built with Bootstrap for a mobile-friendly experience.
-- **Custom Styling:** Enhanced aesthetics using custom CSS.
+```bash
+# Install dependencies
+npm install
 
-## Technologies Used
+# Run the website locally
+npm run dev
+```
 
-- [Python](https://www.python.org/)
-- [Flask](https://flask.palletsprojects.com/)
-- [Bootstrap 5](https://getbootstrap.com/)
-- [HTML5 & CSS3](https://developer.mozilla.org/en-US/docs/Web)
+The site will be available at `http://localhost:4321`.
 
-## Installation
+## Build
 
-Follow these steps to set up the project locally:
+```bash
+# Build for production
+npm run build
 
-### Prerequisites
+# Preview the production build
+npm run preview
+```
 
-- **Python 3.10 or higher** installed on your machine. You can download it from [here](https://www.python.org/downloads/).
-- **Git** installed for version control. Download it from [here](https://git-scm.com/downloads).
+## CI Checks
 
-### Steps
+```bash
+# Run all checks at once (lint, format, build, links, a11y)
+npm run check:all
+```
 
-1. **Clone the Repository**
+Or run them individually:
 
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+```bash
+# Run ESLint
+npm run lint
+
+# Check code formatting
+npm run format:check
+
+# Auto-fix formatting
+npm run format
+
+# Check for broken links (run after npm run build)
+npm run check:links
+
+# Run accessibility audit (requires preview server running)
+npm run preview &
+npm run check:a11y
+```
+
+## Pages
+
+- **Home** - Introduction and social links
+- **About** - Bio, skills, publications, and languages
+- **Career** - Education and work experience timeline
+- **Projects** - Project showcase timeline
+- **Certificates** - Certifications organized by year

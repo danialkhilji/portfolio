@@ -1,0 +1,107 @@
+/* Timeline layout variables */
+:root {
+  --tl-card-width: 310px;
+  --tl-gap: 30px;
+  --tl-dot-size: 12px;
+  --tl-arrow-size: 10px;
+}
+
+/* Timeline Alternating: Left/Right Positioning */
+.timeline-item.left {
+  left: calc(50% - var(--tl-card-width) - var(--tl-gap));
+}
+
+.timeline-item.right {
+  left: calc(50% + var(--tl-gap));
+}
+
+/* Timeline Alternating: Card sizing */
+.timeline-item .card-timeline {
+  position: relative;
+  width: 100%;
+  max-width: var(--tl-card-width);
+  z-index: 6;
+}
+
+/* Dot positions on center line */
+.dot-left {
+  left: calc(var(--tl-card-width) + var(--tl-gap) - var(--tl-dot-size) / 2);
+}
+
+.dot-right {
+  left: calc(-1 * (var(--tl-gap) + var(--tl-dot-size) / 2));
+}
+
+/* Card shadow using drop-shadow so it wraps around the arrow */
+.timeline-item .card-timeline {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: filter 0.3s ease;
+}
+
+.timeline-item .card-timeline:hover {
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Card arrows as part of the card element */
+.timeline-item.left .card-timeline::before,
+.timeline-item.right .card-timeline::before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 20%;
+  border-style: solid;
+  transform: translateY(-50%);
+}
+
+.timeline-item.left .card-timeline::before {
+  right: calc(-1 * var(--tl-arrow-size));
+  border-width: var(--tl-arrow-size) 0 var(--tl-arrow-size) var(--tl-arrow-size);
+  border-color: transparent transparent transparent white;
+}
+
+.timeline-item.right .card-timeline::before {
+  left: calc(-1 * var(--tl-arrow-size));
+  border-width: var(--tl-arrow-size) var(--tl-arrow-size) var(--tl-arrow-size) 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Vertical timeline: no arrows */
+.timeline-vertical .timeline-item::before,
+.timeline-vertical .timeline-item::after {
+  display: none;
+}
+
+/* Responsive: collapse timeline on mobile */
+@media (max-width: 767px) {
+  .timeline-item.left,
+  .timeline-item.right {
+    left: auto;
+    margin-left: 0;
+  }
+
+  .timeline-item .card-timeline {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    border-left: 3px solid #1d3557;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+
+  .dot-left,
+  .dot-right {
+    display: none;
+  }
+
+  .timeline-item.left .card-timeline::before,
+  .timeline-item.right .card-timeline::before {
+    display: none;
+  }
+
+  .timeline-vertical .card {
+    border-left: 3px solid #1d3557;
+  }
+}

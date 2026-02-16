@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { intro, socialLinks } from "../data/intro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout title="Portfolio - Muhammad Danial Khilji" activePage="home">
+  <div class="min-h-[calc(100vh-56px-60px)] flex items-center">
+    <div class="max-w-7xl mx-auto px-4 w-full">
+      <div
+        class="flex flex-col-reverse md:flex-row items-center justify-between gap-10"
+      >
+        <!-- Text content -->
+        <div class="text-center md:text-left md:w-1/2">
+          <h1
+            class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight"
+          >
+            {intro.name}
+          </h1>
+          <p class="text-xl md:text-2xl text-brand-medium mt-3">
+            {intro.title}
+          </p>
+          <div
+            class="flex items-center gap-4 mt-6 justify-center md:justify-start"
+          >
+            {
+              socialLinks.map((link) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  class="text-brand-dark hover:text-brand-cyan transition-colors duration-300"
+                >
+                  <Icon name={link.icon} class="w-6 h-6" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Profile photo -->
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="/image_2.jpg"
+            alt="Muhammad Danial Khilji"
+            class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
