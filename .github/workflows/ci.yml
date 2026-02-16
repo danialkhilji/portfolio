@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   lint:
@@ -46,6 +46,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist
+          path: dist/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
           path: dist/
 
   check-links:
@@ -99,3 +104,19 @@ jobs:
 
       - name: Run accessibility checks
         run: npm run check:a11y
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: [lint, build, check-links, accessibility]
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
