@@ -2,7 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import SkillBadge from "../components/SkillBadge.astro";
-import { skills, languages, publications } from "../data/skills";
+import CertificationBadge from "../components/CertificationBadge.astro";
+import { skills, languages, publications, featuredCertifications } from "../data/skills";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -13,21 +14,28 @@ import { Icon } from "astro-icon/components";
         <Card>
           <div class="text-center">
             <h1 class="text-4xl md:text-5xl font-medium text-brand-dark">Muhammad Danial Khilji</h1>
-            <p class="text-l md:text-xl text-brand-dark mt-1">Data Scientist | Machine Learning Engineer</p>
-            <p class="text-l md:text-xl text-brand-dark mt-1 inline-flex items-center justify-center gap-2">Google Certified Generative AI Leader <a href="/certificates/gcp_gen_ai_leader/Generative AI Leader certificate.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Generative AI Leader certificate"><img src="/certificates/gcp_gen_ai_leader/generative-ai-leader-certification.png" alt="Google Generative AI Leader certification badge" class="w-8 h-8 inline-block" /></a></p>
-            <p class="text-l md:text-xl text-brand-dark mt-1">RSS Certified Professional Data Scientist and Data Analyst</p>
+            <p class="text-lg md:text-xl text-brand-dark mt-1">Data Scientist | Machine Learning Engineer</p>
+            {featuredCertifications.map((cert) => (
+              <CertificationBadge
+                text={cert.text}
+                badgeUrl={cert.badgeUrl}
+                certificateUrl={cert.certificateUrl}
+                badgeAlt={cert.badgeAlt}
+                textSize={cert.textSize}
+              />
+            ))}
             <h2 class="text-left text-lg font-bold text-brand-dark mt-4">About</h2>
             <p class="text-justify">
               As a data scientist, mostly working with NLP technologies,
               with three years of experience in the marketing industry, I am eager to continue growing and learning.
               With a strong background in electrical engineering and a Master's degree in applied data science,
               I am well-equipped to tackle any challenge that comes my way.
-              Currently, I am working on maintaining a python package and help other teams for taxonomy mapping,
+              Currently, I am working on maintaining a Python package and helping other teams for taxonomy mapping,
               where I have the opportunity to put my skills to the test and contribute to meaningful work.
               I am a hardworking and dedicated professional, always looking for ways to improve and excel in my career.
               I get to use my analytical, engineering and machine learning skills to make a real difference with
               an aim to solve problems at hand in the best way possible. It's like I'm Tony Stark in "Iron Man",
-              building something great and using my powers for good (well, data good) with only difference that
+              building something great and using my powers for good (well, data good) with the only difference that
               I love AI more.
             </p>
           </div>

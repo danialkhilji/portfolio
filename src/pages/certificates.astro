@@ -5,17 +5,26 @@ import TimelineCard from "../components/TimelineCard.astro";
 import TimelineYearMarker from "../components/TimelineYearMarker.astro";
 import { certificatesByYear } from "../data/certificates";
 import { Icon } from "astro-icon/components";
+
+const totalCerts = certificatesByYear.reduce((sum, yg) => sum + yg.certificates.length, 0);
+let cumulative = 0;
+const yearGroupOffsets = certificatesByYear.map((yg) => {
+  const offset = cumulative;
+  cumulative += yg.certificates.length;
+  return offset;
+});
 ---
 
 <BaseLayout title="Certificates - Portfolio" activePage="certificates">
   <div class="max-w-7xl mx-auto px-4 mt-3">
     <h1 class="text-center text-3xl md:text-4xl font-medium text-brand-dark mb-1">Certificates</h1>
     <TimelineAlternating>
-      {certificatesByYear.map((yearGroup) => (
+      {certificatesByYear.map((yearGroup, yi) => (
         <div>
           <TimelineYearMarker year={yearGroup.year} />
           {yearGroup.certificates.map((cert, index) => {
-            const side = index % 2 === 0 ? "right" : "left";
+            const globalIndex = yearGroupOffsets[yi] + index;
+            const side = (totalCerts - 1 - globalIndex) % 2 === 0 ? "left" : "right";
             return (
               <TimelineCard side={side}>
                 <div class="text-center">
@@ -23,7 +32,7 @@ import { Icon } from "astro-icon/components";
                   {cert.richIssuer ? (
                     <p class="text-sm" set:html={cert.richIssuer} />
                   ) : (
-                    <p class="text-sm">{cert.issuer}</p>
+                    <p class="text-sm mt-1 mb-2">{cert.issuer}</p>
                   )}
                   <a
                     href={cert.link}

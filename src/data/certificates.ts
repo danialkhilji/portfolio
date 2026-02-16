@@ -82,7 +82,7 @@ export const certificatesByYear: CertificateYear[] = [
         isLocal: true,
       },
       {
-        title: "Generative AI Leader certificate",
+        title: "Generative AI Leader Certificate",
         issuer: "Google Cloud",
         link: "/certificates/gcp_gen_ai_leader/Generative AI Leader certificate.pdf",
         isLocal: true,
@@ -256,13 +256,13 @@ export const certificatesByYear: CertificateYear[] = [
         isLocal: true,
       },
       {
-        title: "Hands On Essentials - Data Applications",
+        title: "Hands-On Essentials - Data Applications",
         issuer: "Snowflake",
         link: "https://achieve.snowflake.com/974d0ca9-5896-41c0-878d-404b6b993663#acc.2pBsJy9P",
         isLocal: false,
       },
       {
-        title: "Hands On Essentials - Data Warehouse",
+        title: "Hands-On Essentials - Data Warehouse",
         issuer: "Snowflake",
         link: "https://achieve.snowflake.com/375fe8fb-ad6b-4a6f-805c-06a409fad00d#acc.IHEjK1r0",
         isLocal: false,
@@ -285,7 +285,7 @@ export const certificatesByYear: CertificateYear[] = [
     year: 2021,
     certificates: [
       {
-        title: "Cultural Fluency",
+        title: "Intercultural Fluency",
         issuer: "Pagoda Projects",
         link: "/certificates/pagoda_projects/Intercultural Fluency.pdf",
         isLocal: true,

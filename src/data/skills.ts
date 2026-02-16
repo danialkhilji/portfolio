@@ -39,13 +39,35 @@ export const languages = [
   { flag: "\u{1F1F5}\u{1F1F0}", name: "Punjabi" },
 ];
 
+export interface FeaturedCertification {
+  text: string;
+  badgeUrl?: string;
+  certificateUrl?: string;
+  badgeAlt?: string;
+  textSize?: string;
+}
+
+export const featuredCertifications: FeaturedCertification[] = [
+  {
+    text: "Google Certified Generative AI Leader",
+    badgeUrl: "/certificates/gcp_gen_ai_leader/generative-ai-leader-certification.png",
+    certificateUrl: "/certificates/gcp_gen_ai_leader/Generative AI Leader certificate.pdf",
+    badgeAlt: "Google Generative AI Leader certification badge",
+    textSize: "text-sm md:text-base", // Smaller text
+  },
+  {
+    text: "RSS Certified Professional Data Scientist and Data Analyst",
+    textSize: "text-sm md:text-base",
+  },
+];
+
 export const publications = [
   {
     title: "Features matching using natural language processing",
     journal: "International Journal on Cybernetics & Informatics (IJCI)",
     date: "Mar 24, 2023",
     abstract:
-      "The feature matching is a basic step in matching different datasets. This article proposes shows a new hybrid model of a pretrained Natural Language Processing (NLP) based model called BERT used in parallel with a statistical model based on Jaccard similarity to measure the similarity between list of features from two different datasets. This reduces the time required to search for correlations or manually match each feature from one dataset to another.",
+      "The feature matching is a basic step in matching different datasets. This article shows a new hybrid model of a pretrained Natural Language Processing (NLP) based model called BERT used in parallel with a statistical model based on Jaccard similarity to measure the similarity between list of features from two different datasets. This reduces the time required to search for correlations or manually match each feature from one dataset to another.",
     link: "https://arxiv.org/abs/2303.12804",
   },
   {

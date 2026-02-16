@@ -2,180 +2,41 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import TimelineVertical from "../components/TimelineVertical.astro";
+import { careerEntries } from "../data/career";
 ---
 
 <BaseLayout title="Career - Portfolio" activePage="career">
   <div class="max-w-7xl mx-auto px-4 mt-3">
     <h1 class="text-center text-3xl md:text-4xl font-medium text-brand-dark mb-4">Career</h1>
     <TimelineVertical>
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Data Scientist</h5>
-            <p class="text-sm text-gray-500">Choreograph / WPP Media &middot; June 2023 - Present</p>
-            <div class="text-justify mt-2">
-              <ul class="list-disc text-left ml-5 space-y-1">
-                <li>Designed and continuously improved the taxonomy mapping process for the Audience Translator project, enabling >1K users in just Q1 to map source taxonomies (mainly Audience Origin) to ad-tech platforms like Meta and Google, plus handling bespoke mappings on request.</li>
-                <li>Partnered with engineers to automate mappings with Airflow, reducing turnaround time from weeks to under one week by running taxonomy similarity, calculating KPIs, storing results, and notifying users.</li>
-                <li>Built and maintain a Python package for taxonomy similarity, now adopted across multiple teams. Enhanced it with taxonomy cleaning, automated KPI calculation, model evaluation, and user flexibility to adjust models and weights.</li>
-                <li>Integrated pre-trained and fine-tuned BERT models, developed a weighted similarity algorithm, and continue to research optimization for mapping quality.</li>
-                <li>Developed an evaluation module with text corruption strategies, ground-truth validation, and confusion matrices to test algorithmic performance.</li>
-                <li>Implemented LLM-based features (GPT-4 and Gemini 1.5 Pro) including taxonomy enrichment with descriptions and lightweight RAG functionality using Python dictionaries for efficient vector storage, improving semantic accuracy without relying on external databases.</li>
-                <li>Developed an automated LLM supervision layer, using GPT-4 and GPT-4o, to pre-review mapped taxonomies before human validation, significantly reducing manual review time and streamlining the overall mapping workflow.</li>
-                <li>Investigated geo-targeted advertising inaccuracies with Snowflake queries, analyzing device ID matching across partners and identifying data noise. Consulted on email matching optimization for campaigns using probabilistic matching algorithms and normalization techniques. Created a comprehensive QA framework with automated validation checks and data profiling metrics to evaluate new partner data onboarding, ensuring campaign targeting accuracy and maintaining data quality standards.</li>
-                <li>Investigated Habu clean rooms to enable secure and collaborative data sharing with clients from a data science perspective.</li>
-                <li>Developed a multi-agent system using LangGraph and Model Context Protocol (MCP) for modular tool integration, implementing async/sync bridging to connect protocol servers with LangChain workflows. Built multi-provider LLM orchestration (Azure OpenAI for GPTs, Vertex AI for Claude models) with self-reflection loops, semantic duplicate detection for Jira automation, and comprehensive logging infrastructure for automated API research and code generation.</li>
-              </ul>
+      {careerEntries.map((entry) => (
+        <div class="timeline-item relative mb-4">
+          <Card>
+            <div class="text-center">
+              <h5 class="text-lg font-semibold">{entry.title}</h5>
+              <p class="text-sm text-gray-500">{entry.organization} &middot; {entry.dateRange}</p>
+              {entry.project && (
+                <p class="text-sm text-gray-500 mt-1">Project: {entry.project}</p>
+              )}
+              {(entry.description || entry.bullets) && (
+                <div class="text-justify mt-4">
+                  {entry.bulletPrefix && <p>{entry.bulletPrefix}</p>}
+                  {entry.description && entry.description.map((paragraph, i) => (
+                    <p class={i > 0 ? "mt-2" : ""}>{paragraph}</p>
+                  ))}
+                  {entry.bullets && (
+                    <ul class:list={["list-disc text-left ml-5 space-y-1", entry.bulletPrefix && "mt-1"]}>
+                      {entry.bullets.map((bullet) => (
+                        <li>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Junior Data Scientist</h5>
-            <p class="text-sm text-gray-500">Choreograph / WPP Media &middot; March 2022 - June 2023</p>
-            <div class="text-justify mt-2">
-              <ul class="list-disc text-left ml-5 space-y-1">
-                <li>Participated in WPP Data Challenge #4 and #5. Winner of Data Challenge #5.</li>
-                <li>Contributed to the Audience Knowledge Graph (AKG) project, developing taxonomy mapping module, data cleaning steps for data clean rooms, and Looker Studio dashboard for monitoring each module progress among other tasks.</li>
-                <li>Created Python package to expose taxonomy mapping project to different teams within company. Package uses pre-trained BERT language models from Hugging Face library to generate vector embeddings which are used to calculate cosine similarity.</li>
-                <li>Focus on taxonomy mapping work also known as Named Entity Resolution (NER). Improved the previously developed algorithm by removing loops and reducing time complexity from O(n) to O(1).</li>
-              </ul>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">WPP NextGen Leader</h5>
-            <p class="text-sm text-gray-500">WPP &middot; June 2022 - August 2022</p>
-            <p class="text-justify mt-2">10 weeks internship in WPP to give an understanding of how, as a group of agencies, WPP work in the creative world, help their clients grow and build advertisement campaigns.</p>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Data Intern</h5>
-            <p class="text-sm text-gray-500">Choreograph / WPP Media &middot; November 2021 - March 2022</p>
-            <p class="text-sm text-gray-500 mt-1">Project: FaaS Jinx Discovery</p>
-            <div class="text-justify mt-2">
-              <ul class="list-disc text-left ml-5 space-y-1">
-                <li>Worked in Fusion as a Service (FaaS) team where I developed an algorithm using NLP to identify common features between two different datasets to allow easy data fusion.</li>
-                <li>Spent time on understanding issues of the team. Figured out they require features matching algorithm to speed up the data fusions.</li>
-                <li>Started a small project to build an NLP solution that can give best features matches between two datasets which was then named taxonomy mapper.</li>
-                <li>Used Kubeflow to run computationally expensive code.</li>
-              </ul>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Internship Program</h5>
-            <p class="text-sm text-gray-500">Pagoda Projects &middot; February 2021 - March 2021</p>
-            <div class="text-justify mt-2">
-              <p>Main skills focus on:</p>
-              <ul class="list-disc text-left ml-5 space-y-1 mt-1">
-                <li>Digital Competency</li>
-                <li>Employability Skills</li>
-                <li>Intercultural Fluency</li>
-                <li>Workplace Basics for Graduates</li>
-              </ul>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Junior Data Analyst & Second Line Technical Support</h5>
-            <p class="text-sm text-gray-500">TalkPool AG &middot; June 2019 - September 2019</p>
-            <p class="text-justify mt-2">Served as an internee for remote monitoring system in Haiti in field of Data Science and second line technical support. Main duties include monitoring and analyzing data of communication towers fetched from cloud system.</p>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Community Volunteer</h5>
-            <p class="text-sm text-gray-500">Rizq &middot; May 2019</p>
-            <p class="text-justify mt-2">Being a people powered movement united to end hunger, our success truly depends on the commitment of our volunteers. For this reason, I served as a volunteer for a total of 15 hours.</p>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Community Volunteer</h5>
-            <p class="text-sm text-gray-500">Sultan Qaboos University &middot; September 2017</p>
-            <p class="text-justify mt-2">Attended a clinical attachment program at the Emergency Medicine department of Sultan Qaboos University Hospital.</p>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Masters in Applied Data Science</h5>
-            <p class="text-sm text-gray-500">University of Lancashire &middot; September 2020 - September 2021</p>
-            <div class="text-justify mt-2">
-              <p>Thesis on Performance of Optical Flow using Spiking Neural Networks. Major courses were Artificial Intelligence & Machine Learning, Internet of Things and Big Data Technologies.</p>
-              <p class="mt-2">Besides learning numerous data technologies and doing related projects, I learned Linux OS for configuring ESP32 for IOT applications.</p>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Bachelors in Electrical Engineering</h5>
-            <p class="text-sm text-gray-500">National University of Sciences and Technology &middot; October 2016 - May 2020</p>
-            <div class="text-justify mt-2">
-              <p>Participated in National Engineering Robotic Competition (NERC) for two consecutive years, in the line following category. For the most part I worked on the H-Bridge for the motors of the robot. Besides that, joined membership for horse riding club which I continued for most of my sophomore year. Joined Photography club in my freshman year and worked as a associate photographer in the EME Olympiad 2016 event.</p>
-              <p class="mt-2">Graduated with major elective courses: Artificial Intelligence, Computer Vision, Digital System Designs and Electric Drives. The project Micro-Inverter with Lithium Ion battery was completed as a final year project.</p>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Advance Levels</h5>
-            <p class="text-sm text-gray-500">Pakistan School Muscat &middot; May 2014 - May 2016</p>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Ordinary Levels</h5>
-            <p class="text-sm text-gray-500">Pakistan School Muscat &middot; May 2012 - May 2014</p>
-          </div>
-        </Card>
-      </div>
-
-      <div class="timeline-item relative mb-4">
-        <Card>
-          <div class="text-center">
-            <h5 class="text-lg font-semibold">Primary Education</h5>
-            <p class="text-sm text-gray-500">Pakistan School Muscat &middot; 2008 - 2012</p>
-          </div>
-        </Card>
-      </div>
+          </Card>
+        </div>
+      ))}
     </TimelineVertical>
   </div>
 </BaseLayout>
