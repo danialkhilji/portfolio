@@ -45,6 +45,13 @@ npm run preview
 ## CI Checks
 
 ```bash
+# Run all checks at once (lint, format, build, links, a11y)
+npm run check:all
+```
+
+Or run them individually:
+
+```bash
 # Run ESLint
 npm run lint
 
