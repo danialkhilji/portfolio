@@ -14,6 +14,10 @@ const {
   badgeAlt,
   textSize = "text-lg md:text-xl",
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const resolveUrl = (url?: string) =>
+  url?.startsWith("/") ? `${base}${url.slice(1)}` : url;
 ---
 
 <p
@@ -26,14 +30,14 @@ const {
   {
     badgeUrl && certificateUrl && (
       <a
-        href={certificateUrl}
+        href={resolveUrl(certificateUrl)}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`View ${text} certificate`}
         class="transition-transform hover:scale-110 duration-200"
       >
         <img
-          src={badgeUrl}
+          src={resolveUrl(badgeUrl)}
           alt={badgeAlt || `${text} badge`}
           class="w-8 h-8 inline-block"
           loading="lazy"

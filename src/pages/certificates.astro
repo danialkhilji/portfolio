@@ -44,7 +44,11 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                       <p class="text-sm mt-1 mb-2">{cert.issuer}</p>
                     )}
                     <a
-                      href={cert.link}
+                      href={
+                        cert.link.startsWith("/")
+                          ? `${import.meta.env.BASE_URL}${cert.link.slice(1)}`
+                          : cert.link
+                      }
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${cert.title} certificate`}

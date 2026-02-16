@@ -12,7 +12,7 @@ import Card from "../components/Card.astro";
             <h1>404</h1>
             <p>Page Not Found</p>
             <a
-              href="/"
+              href={import.meta.env.BASE_URL}
               class="inline-block mt-4 bg-brand-light border border-brand-light text-base px-6 py-2 rounded transition-all duration-300 hover:bg-brand-medium hover:border-brand-medium hover:text-white hover:-translate-y-0.5 active:bg-brand-dark active:border-brand-dark active:translate-y-0 no-underline"
             >
               Go Home
