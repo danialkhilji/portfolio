@@ -7,10 +7,10 @@
     }
   },
   "urls": [
-    "http://localhost:4321/",
-    "http://localhost:4321/about/",
-    "http://localhost:4321/career/",
-    "http://localhost:4321/projects/",
-    "http://localhost:4321/certificates/"
+    "http://localhost:4321/portfolio/",
+    "http://localhost:4321/portfolio/about/",
+    "http://localhost:4321/portfolio/career/",
+    "http://localhost:4321/portfolio/projects/",
+    "http://localhost:4321/portfolio/certificates/"
   ]
 }

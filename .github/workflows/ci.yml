@@ -73,6 +73,12 @@ jobs:
           name: dist
           path: dist/
 
+      - name: Start preview server
+        run: npm run preview &
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:4321/portfolio/ --timeout 30000
+
       - name: Check links
         run: npm run check:links
 
@@ -100,7 +106,7 @@ jobs:
         run: npm run preview &
 
       - name: Wait for server
-        run: npx wait-on http://localhost:4321 --timeout 30000
+        run: npx wait-on http://localhost:4321/portfolio/ --timeout 30000
 
       - name: Run accessibility checks
         run: npm run check:a11y
