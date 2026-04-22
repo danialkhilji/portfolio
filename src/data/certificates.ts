@@ -146,8 +146,8 @@ export const certificatesByYear: CertificateYear[] = [
       {
         title: "Machine Learning in Production (MLOps)",
         issuer: "DeepLearning.AI",
-         logo: "logos/deep_learning_ai.svg",
-         logoSize: "w-7 h-7",
+        logo: "logos/deep_learning_ai.svg",
+        logoSize: "w-7 h-7",
         link: "/certificates/Machine Learning in Production (MLOps) DeeplearningAI.pdf",
         isLocal: true,
       },

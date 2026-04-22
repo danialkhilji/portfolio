@@ -44,7 +44,10 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                           <img
                             src={`${import.meta.env.BASE_URL}${cert.logo}`}
                             alt={cert.issuer}
-                            class:list={[cert.logoSize || "w-8 h-8", "rounded object-contain"]}
+                            class:list={[
+                              cert.logoSize || "w-8 h-8",
+                              "rounded object-contain",
+                            ]}
                           />
                         )}
                         <span set:html={cert.richIssuer} />
@@ -55,7 +58,10 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                           <img
                             src={`${import.meta.env.BASE_URL}${cert.logo}`}
                             alt={cert.issuer}
-                            class:list={[cert.logoSize || "w-8 h-8", "rounded object-contain"]}
+                            class:list={[
+                              cert.logoSize || "w-8 h-8",
+                              "rounded object-contain",
+                            ]}
                           />
                         )}
                         <span>{cert.issuer}</span>

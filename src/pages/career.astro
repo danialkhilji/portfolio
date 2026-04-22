@@ -29,7 +29,9 @@ import { careerEntries } from "../data/career";
                   )}
                   <span>
                     {entry.organization}
-                    {entry.dateRange && <Fragment>&nbsp;&middot; {entry.dateRange}</Fragment>}
+                    {entry.dateRange && (
+                      <Fragment>&nbsp;&middot; {entry.dateRange}</Fragment>
+                    )}
                   </span>
                 </p>
                 {entry.project && (
