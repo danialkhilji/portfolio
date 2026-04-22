@@ -19,8 +19,20 @@ import { careerEntries } from "../data/career";
             <Card>
               <div class="text-center">
                 <h5 class="text-lg font-semibold">{entry.title}</h5>
-                <p class="text-sm text-gray-500">
-                  {entry.organization} &middot; {entry.dateRange}
+                <p class="text-sm text-gray-500 flex items-center justify-center gap-2">
+                  {entry.logo && (
+                    <img
+                      src={`${import.meta.env.BASE_URL}${entry.logo}`}
+                      alt={entry.organization}
+                      class="w-8 h-8 rounded object-contain"
+                    />
+                  )}
+                  <span>
+                    {entry.organization}
+                    {entry.dateRange && (
+                      <Fragment>&nbsp;&middot; {entry.dateRange}</Fragment>
+                    )}
+                  </span>
                 </p>
                 {entry.project && (
                   <p class="text-sm text-gray-500 mt-1">

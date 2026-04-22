@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 import "../styles/timeline.css";
 
 interface Props {
@@ -37,5 +38,6 @@ const {
       <slot />
     </main>
     <Footer />
+    <ScrollToTop />
   </body>
 </html>
