@@ -32,6 +32,8 @@ npm run dev
 
 The site will be available at `http://localhost:4321`.
 
+> **Note:** Requires Astro >= 5.18.1 and Node.js >= 22.12.0; older Astro 5.x versions deadlock with Node 22 — run `npm install astro@latest` if `npm run dev` hangs silently.
+
 ## Build
 
 ```bash
