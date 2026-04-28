@@ -65,6 +65,13 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                           />
                         )}
                         <span>{cert.issuer}</span>
+                        {cert.certificateImage && (
+                          <img
+                            src={`${import.meta.env.BASE_URL}${cert.certificateImage.slice(1)}`}
+                            alt={`${cert.title} certificate badge`}
+                            class="w-8 h-8 rounded object-contain"
+                          />
+                        )}
                       </p>
                     )}
                     <a

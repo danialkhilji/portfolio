@@ -29,6 +29,16 @@ const {
       type="image/x-icon"
       href={`${import.meta.env.BASE_URL}favicon.ico`}
     />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC75KPG2LB"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PC75KPG2LB");
+    </script>
   </head>
   <body
     class="min-h-screen m-0 pt-14 w-full font-sans bg-brand-bg text-brand-dark overflow-x-hidden flex flex-col"
