@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
@@ -29,6 +30,7 @@ const {
       type="image/x-icon"
       href={`${import.meta.env.BASE_URL}favicon.ico`}
     />
+    <ViewTransitions />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC75KPG2LB"
     ></script>
     <script is:inline>
