@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
   text: string;
   badgeUrl?: string;
@@ -23,7 +25,7 @@ const resolveUrl = (url?: string) =>
 <p
   class:list={[
     textSize,
-    "text-brand-dark mt-1 flex items-center justify-center gap-2",
+    "text-dark-accent mt-1 flex items-center justify-center gap-2",
   ]}
 >
   {text}
@@ -34,14 +36,9 @@ const resolveUrl = (url?: string) =>
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`View ${text} certificate`}
-        class="transition-transform hover:scale-110 duration-200"
+        class="inline-block text-dark-text-secondary hover:text-dark-accent transition-colors duration-200"
       >
-        <img
-          src={resolveUrl(badgeUrl)}
-          alt={badgeAlt || `${text} badge`}
-          class="w-8 h-8 inline-block"
-          loading="lazy"
-        />
+        <Icon name="bi:award-fill" class="w-6 h-6 inline-block" />
       </a>
     )
   }

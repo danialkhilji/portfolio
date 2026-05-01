@@ -15,11 +15,11 @@ import { Icon } from "astro-icon/components";
           class="text-center md:text-left md:w-1/2 opacity-0 translate-y-5 animate-fadeInUp"
         >
           <h1
-            class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight"
+            class="text-4xl md:text-6xl font-bold text-dark-text leading-tight"
           >
             {intro.name}
           </h1>
-          <p class="text-xl md:text-2xl text-brand-medium mt-3">
+          <p class="text-xl md:text-2xl text-dark-accent mt-3">
             {intro.title}
           </p>
           <div
@@ -32,7 +32,7 @@ import { Icon } from "astro-icon/components";
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  class="text-brand-dark hover:text-brand-cyan transition-colors duration-300"
+                  class="text-dark-text hover:text-dark-accent transition-colors duration-300"
                 >
                   <Icon name={link.icon} class="w-6 h-6" />
                 </a>

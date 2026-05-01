@@ -16,12 +16,12 @@ const navItems = [
 ---
 
 <nav
-  class="fixed top-5 left-0 right-0 z-[1000] mx-auto w-fit rounded-[20px] bg-brand-cyan shadow-lg px-2.5 py-1.5 flex flex-wrap justify-center items-center"
+  class="fixed top-5 left-0 right-0 z-[1000] mx-auto w-fit rounded-[20px] bg-dark-card border border-dark-border shadow-lg px-2.5 py-1.5 flex flex-wrap justify-center items-center"
   aria-label="Main navigation"
 >
   <button
     id="nav-toggle"
-    class="md:hidden p-2 text-brand-dark"
+    class="md:hidden p-2 text-dark-text"
     aria-label="Toggle navigation"
     aria-expanded="false"
   >
@@ -45,8 +45,8 @@ const navItems = [
             class:list={[
               "block mx-2.5 my-1 md:my-0 font-medium transition-colors duration-300 no-underline",
               activePage === item.page
-                ? "text-brand-dark font-semibold"
-                : "text-brand-dark hover:text-brand-dark",
+                ? "text-dark-accent font-semibold"
+                : "text-dark-text-secondary hover:text-dark-accent",
             ]}
             aria-current={activePage === item.page ? "page" : undefined}
           >
