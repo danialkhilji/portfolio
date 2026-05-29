@@ -82,6 +82,49 @@
   display: none;
 }
 
+/* Career accordion: hide default marker */
+.career-accordion summary::-webkit-details-marker,
+.career-accordion summary::marker {
+  display: none;
+}
+
+/* Career accordion: chevron rotation */
+.career-accordion[open] .career-chevron {
+  transform: rotate(180deg);
+}
+
+/* Career accordion: smooth expand/collapse */
+.career-accordion-body {
+  overflow: hidden;
+  animation: accordion-close 0.3s ease forwards;
+}
+
+.career-accordion[open] .career-accordion-body {
+  animation: accordion-open 0.3s ease forwards;
+}
+
+@keyframes accordion-open {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+@keyframes accordion-close {
+  from {
+    opacity: 1;
+    max-height: 2000px;
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
 /* Responsive: collapse timeline on mobile */
 @media (max-width: 767px) {
   .timeline-item.left,
