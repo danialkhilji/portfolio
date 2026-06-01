@@ -4,7 +4,7 @@ import { intro, socialLinks } from "../data/intro";
 import { Icon } from "astro-icon/components";
 ---
 
-<BaseLayout title="Portfolio - Muhammad Danial Khilji" activePage="home">
+<BaseLayout title="Muhammad Danial Khilji - Portfolio" activePage="home">
   <div class="min-h-[calc(100vh-56px-60px)] flex items-center">
     <div class="max-w-7xl mx-auto px-4 w-full">
       <div
@@ -15,11 +15,11 @@ import { Icon } from "astro-icon/components";
           class="text-center md:text-left md:w-1/2 opacity-0 translate-y-5 animate-fadeInUp"
         >
           <h1
-            class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight"
+            class="text-4xl md:text-6xl font-bold text-dark-text leading-tight"
           >
             {intro.name}
           </h1>
-          <p class="text-xl md:text-2xl text-brand-medium mt-3">
+          <p class="text-xl md:text-2xl text-dark-accent mt-3">
             {intro.title}
           </p>
           <div
@@ -32,7 +32,7 @@ import { Icon } from "astro-icon/components";
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  class="text-brand-dark hover:text-brand-cyan transition-colors duration-300"
+                  class="text-dark-text hover:text-dark-accent transition-colors duration-300"
                 >
                   <Icon name={link.icon} class="w-6 h-6" />
                 </a>
@@ -48,7 +48,7 @@ import { Icon } from "astro-icon/components";
           <img
             src={`${import.meta.env.BASE_URL}image_2.jpg`}
             alt="Muhammad Danial Khilji"
-            class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg"
+            class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-2 border-dark-accent"
           />
         </div>
       </div>

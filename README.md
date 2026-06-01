@@ -71,6 +71,10 @@ npm run preview &
 npm run check:a11y
 ```
 
+## Analytics
+
+View website analytics in [Google Analytics](https://analytics.google.com/) (Measurement ID: `G-PC75KPG2LB`).
+
 ## Pages
 
 - **Home** - Introduction and social links

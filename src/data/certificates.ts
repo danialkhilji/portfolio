@@ -6,6 +6,7 @@ export interface Certificate {
   link: string;
   isLocal: boolean;
   richIssuer?: string;
+  certificateImage?: string;
 }
 
 export interface CertificateYear {
@@ -100,6 +101,8 @@ export const certificatesByYear: CertificateYear[] = [
         logo: "logos/gcp.svg",
         link: "/certificates/gcp_gen_ai_leader/Generative AI Leader certificate.pdf",
         isLocal: true,
+        certificateImage:
+          "/certificates/gcp_gen_ai_leader/generative-ai-leader-certification.png",
       },
       {
         title: "Gen AI Generative AI Leader",
