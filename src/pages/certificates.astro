@@ -46,7 +46,8 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                             alt={cert.issuer}
                             class:list={[
                               cert.logoSize || "w-8 h-8",
-                              "rounded object-contain",
+                              "rounded object-contain bg-white",
+                              (cert.issuer === "DataCamp" || cert.issuer === "Coursera") ? "px-0.5 py-0" : "px-0.5 py-0.5",
                             ]}
                           />
                         )}
@@ -60,7 +61,8 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                             alt={cert.issuer}
                             class:list={[
                               cert.logoSize || "w-8 h-8",
-                              "rounded object-contain",
+                              "rounded object-contain bg-white",
+                              (cert.issuer === "DataCamp" || cert.issuer === "Coursera") ? "px-0.5 py-0" : "px-0.5 py-0.5",
                             ]}
                           />
                         )}
@@ -69,7 +71,7 @@ const yearGroupOffsets = certificatesByYear.map((yg) => {
                           <img
                             src={`${import.meta.env.BASE_URL}${cert.certificateImage.slice(1)}`}
                             alt={`${cert.title} certificate badge`}
-                            class="w-8 h-8 rounded object-contain"
+                            class="w-8 h-8 rounded object-contain bg-white px-0.5 py-0.5"
                           />
                         )}
                       </p>
