@@ -11,6 +11,15 @@ export default {
         'brand-bg': '#F8F9FA',
         'brand-dot': '#023047',
         'brand-footer': '#2c2c2c',
+        // Dark theme colors
+        'dark-bg': '#0a0a0a',
+        'dark-card': '#1a1a1a',
+        'dark-card-hover': '#222222',
+        'dark-text': '#f5f5f5',
+        'dark-text-secondary': '#d1d5db',
+        'dark-text-muted': '#9ca3af',
+        'dark-border': '#2a2a2a',
+        'dark-accent': '#4cc9f0',
       },
       keyframes: {
         fadeInUp: {
