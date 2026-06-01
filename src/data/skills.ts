@@ -24,6 +24,7 @@ export const domains: Skill[] = [
   { label: "Data Pipelines" },
   { label: "Data Clean Rooms" },
   { label: "Data Visualization" },
+  { label: "Web Development" },
 ];
 
 export const technologies: Skill[] = [
@@ -90,6 +91,13 @@ export const technologies: Skill[] = [
     iconType: "local",
   },
   { label: "Weka", icon: "logos/weka.svg", iconType: "local" },
+  { label: "Astro", icon: "devicon:astro" },
+  { label: "TypeScript", icon: "devicon:typescript" },
+  { label: "Tailwind CSS", icon: "devicon:tailwindcss" },
+  { label: "HTML/CSS", icon: "devicon:html5" },
+  { label: "JavaScript", icon: "devicon:javascript" },
+  { label: "GitHub Actions", icon: "devicon:githubactions" },
+  { label: "GitHub Pages", icon: "devicon:github" },
 ];
 
 export const languages = [
