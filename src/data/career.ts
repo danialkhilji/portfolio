@@ -56,7 +56,6 @@ export const careerEntries: CareerEntry[] = [
     organization: "Choreograph / WPP",
     logo: "logos/wpp.svg",
     dateRange: "November 2021 - March 2022",
-    project: "FaaS Jinx Discovery",
     bullets: [
       "Worked in Fusion as a Service (FaaS) team where I developed an algorithm using NLP to identify common features between two different datasets to allow easy data fusion.",
       "Spent time on understanding issues of the team. Figured out they required a feature matching algorithm to speed up the data fusions.",
