@@ -16,6 +16,18 @@ export interface CertificateYear {
 
 export const certificatesByYear: CertificateYear[] = [
   {
+    year: 2026,
+    certificates: [
+      {
+        title: "Generative AI and ML with Vertex AI",
+        issuer: "Google Cloud",
+        logo: "logos/gcp.svg",
+        link: "/certificates/Generative AI and ML with Vertex AI.png",
+        isLocal: true,
+      },
+    ],
+  },
+  {
     year: 2025,
     certificates: [
       {
