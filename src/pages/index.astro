@@ -10,7 +10,10 @@ try {
     chartSvg = await res.text();
     chartSvg = chartSvg.replaceAll("#EEEEEE", "#1a1a1a");
     chartSvg = chartSvg.replaceAll("#767676", "#9ca3af");
-    chartSvg = chartSvg.replace('width="663" height="104"', 'width="100%" height="100%" viewBox="0 0 663 104"');
+    chartSvg = chartSvg.replace(
+      'width="663" height="104"',
+      'width="100%" height="100%" viewBox="0 0 663 104"',
+    );
   }
 } catch {
   // Fail silently
