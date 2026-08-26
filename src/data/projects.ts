@@ -5,9 +5,42 @@ export interface Project {
   bullets?: string[];
   contributors?: string;
   githubUrl?: string;
+  websiteUrl?: string;
+  image?: string;
+  icon?: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "HomeOS",
+    date: "August 2026",
+    description:
+      "A self-hosted family operating system designed for a kitchen touchscreen. Manages household tasks, shopping lists, notes, prayer times, birthdays, and weather from a single shared display replacing scattered notes and verbal reminders with one collaborative interface.",
+    bullets: [
+      "Built with React, TypeScript, Vite, and Tailwind CSS on the frontend; Python 3.12, FastAPI, SQLAlchemy, and SQLite on the backend, fully containerised with Docker Compose.",
+      "Features automatic task rotation across family members, recurring tasks (daily/weekly/monthly), reminders with overdue highlighting, and drag-and-drop reorder via dnd-kit.",
+      "Integrated prayer times (Aladhan API with Hijri calendar), live weather with animated CSS backgrounds (Open-Meteo API), and a calendar system with birthday tracking.",
+      "Store-based shopping lists with quick-add emoji buttons, family notes board, member avatars with server-side image processing, and a warm ivory UI theme.",
+      "Deployed as a PWA with remote access via Tailscale VPN, automated database backups, CI/CD via GitHub Actions, pre-push hooks, and 135+ backend tests.",
+    ],
+    githubUrl: "https://github.com/danialkhilji/HomeOS/tree/main",
+    image: "projects/homeos_dashboard.jpeg",
+  },
+  {
+    title: "Jarvis",
+    date: "June 2026",
+    description:
+      "A macOS desktop AI assistant inspired by Iron Man's J.A.R.V.I.S. — a floating chat interface with smart model routing, file operations, document editing, image generation, and web search, backed by a FastAPI cloud proxy for authentication, billing, and rate limiting.",
+    bullets: [
+      "Built with Python, Agno agent framework, and CustomTkinter; packaged as a standalone macOS .app with no Python required for end users.",
+      "Multi-model support with in-chat switching (DeepSeek, Gemini, GPT, Claude) and smart auto-routing that picks the best model per query category (code, reasoning, creative, quick).",
+      "Secure Mode for fully offline private AI using a local Ollama model, with encrypted SQLite memory and API keys stored in macOS Keychain.",
+      "Document skills including Excel, Word, PowerPoint, PDF reading, AI image generation (FLUX.1) and editing, and sandboxed file operations.",
+      "FastAPI backend proxy deployed on Railway with JWT auth, Stripe subscription billing, rate limiting, and server-side model routing; 180+ desktop app tests and 25 backend tests with GitHub Actions CI.",
+    ],
+    websiteUrl: "https://danialkhilji.github.io/jarvis-website/",
+    icon: "projects/jarvis_icon.png",
+  },
   {
     title: "Personal Portfolio Website",
     date: "October 2024",

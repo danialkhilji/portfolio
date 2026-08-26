@@ -6,7 +6,7 @@ export interface SocialLink {
 
 export const intro = {
   name: "Muhammad Danial Khilji",
-  title: "Data Scientist | Machine Learning Engineer",
+  title: "Data Scientist | AI Engineer",
 };
 
 export const socialLinks: SocialLink[] = [

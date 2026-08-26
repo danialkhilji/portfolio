@@ -62,6 +62,18 @@ for (const project of projects) {
                           <Icon name="bi:github" class="w-6 h-6 inline-block" />
                         </a>
                       )}
+                      {project.websiteUrl && (
+                        <a
+                          href={project.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.title} website`}
+                          class="text-dark-text-secondary hover:text-dark-accent transition-colors duration-200 inline-block mt-1"
+                          onclick="event.stopPropagation()"
+                        >
+                          <Icon name="bi:globe" class="w-6 h-6 inline-block" />
+                        </a>
+                      )}
                       <svg
                         class="career-chevron mx-auto mt-2 w-5 h-5 text-dark-accent transition-transform duration-300"
                         fill="none"
@@ -89,6 +101,29 @@ for (const project of projects) {
                         <p class="text-left mt-2">
                           <b>Other contributors:</b> {project.contributors}
                         </p>
+                      )}
+                      {project.image && (
+                        <div class="mt-4 flex justify-center">
+                          <img
+                            src={`${import.meta.env.BASE_URL}${project.image}`}
+                            alt={`${project.title} screenshot`}
+                            class="rounded-lg w-1/2"
+                          />
+                        </div>
+                      )}
+                      {project.icon && (
+                        <div class="mt-6 flex justify-center">
+                          <div class="jarvis-icon-wrapper">
+                            <div class="jarvis-glow" />
+                            <div class="jarvis-ring-outer" />
+                            <div class="jarvis-ring-inner" />
+                            <img
+                              src={`${import.meta.env.BASE_URL}${project.icon}`}
+                              alt={`${project.title} icon`}
+                              class="jarvis-icon-img"
+                            />
+                          </div>
+                        </div>
                       )}
                     </div>
                   </details>

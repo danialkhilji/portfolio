@@ -2,10 +2,26 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { intro, socialLinks } from "../data/intro";
 import { Icon } from "astro-icon/components";
+
+let chartSvg = "";
+try {
+  const res = await fetch("https://ghchart.rshah.org/4cc9f0/danialkhilji");
+  if (res.ok) {
+    chartSvg = await res.text();
+    chartSvg = chartSvg.replaceAll("#EEEEEE", "#1a1a1a");
+    chartSvg = chartSvg.replaceAll("#767676", "#9ca3af");
+    chartSvg = chartSvg.replace(
+      'width="663" height="104"',
+      'width="100%" height="100%" viewBox="0 0 663 104"',
+    );
+  }
+} catch {
+  // Fail silently
+}
 ---
 
 <BaseLayout title="Muhammad Danial Khilji - Portfolio" activePage="home">
-  <div class="min-h-[calc(100vh-56px-60px)] flex items-center">
+  <div class="min-h-[calc(100vh-56px-60px-120px)] flex items-center">
     <div class="max-w-7xl mx-auto px-4 w-full">
       <div
         class="flex flex-col-reverse md:flex-row items-center justify-between gap-10"
@@ -15,7 +31,7 @@ import { Icon } from "astro-icon/components";
           class="text-center md:text-left md:w-1/2 opacity-0 translate-y-5 animate-fadeInUp"
         >
           <h1
-            class="text-4xl md:text-6xl font-bold text-dark-text leading-tight"
+            class="text-3xl md:text-5xl font-bold text-dark-text leading-tight"
           >
             {intro.name}
           </h1>
@@ -43,15 +59,35 @@ import { Icon } from "astro-icon/components";
 
         <!-- Profile photo -->
         <div
-          class="md:w-1/2 flex justify-center opacity-0 translate-y-5 animate-fadeInUp"
+          class="md:w-1/2 flex justify-center md:pl-8 opacity-0 translate-y-5 animate-fadeInUp"
         >
           <img
             src={`${import.meta.env.BASE_URL}image_2.jpg`}
             alt="Muhammad Danial Khilji"
-            class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-2 border-dark-accent"
+            class="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover shadow-lg border-2 border-dark-accent"
           />
         </div>
       </div>
     </div>
   </div>
+
+  {
+    chartSvg && (
+      <div class="max-w-5xl mx-auto px-4 pb-6 -mt-12">
+        <h2 class="text-2xl font-semibold text-dark-text text-center mb-6">
+          GitHub Activity
+        </h2>
+        <div class="flex justify-center">
+          <a
+            href="https://github.com/danialkhilji"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full"
+          >
+            <div class="w-full max-w-2xl mx-auto" set:html={chartSvg} />
+          </a>
+        </div>
+      </div>
+    )
+  }
 </BaseLayout>
