@@ -128,6 +128,68 @@
   }
 }
 
+/* Jarvis floating icon with rotating rings */
+.jarvis-icon-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.jarvis-glow {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(76, 201, 240, 0.25) 0%, transparent 70%);
+  animation: jarvis-pulse 3s ease-in-out infinite;
+}
+
+.jarvis-ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed #2a6a80;
+  animation: jarvis-spin-cw 12s linear infinite;
+}
+
+.jarvis-ring-inner {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 3px dashed #1a4a60;
+  animation: jarvis-spin-ccw 8s linear infinite;
+}
+
+.jarvis-icon-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes jarvis-spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes jarvis-spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes jarvis-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
 /* Responsive: collapse timeline on mobile */
 @media (max-width: 767px) {
   .timeline-item.left,

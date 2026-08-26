@@ -30,10 +30,15 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(calc(20px - 50%))' },
           '100%': { opacity: '1', transform: 'translateY(-50%)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
       },
       animation: {
         fadeInUp: 'fadeInUp 0.5s forwards',
         fadeInUpArrows: 'fadeInUpArrows 0.5s forwards',
+        float: 'float 3s ease-in-out infinite',
       },
     },
   },

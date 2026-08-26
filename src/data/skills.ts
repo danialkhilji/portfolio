@@ -25,12 +25,15 @@ export const domains: Skill[] = [
   { label: "Data Clean Rooms" },
   { label: "Data Visualization" },
   { label: "Web Development" },
+  { label: "Full-Stack Development" },
 ];
 
 export const technologies: Skill[] = [
   { label: "Python", icon: "devicon:python" },
   { label: "MySQL", icon: "devicon:mysql" },
   { label: "PostgreSQL", icon: "devicon:postgresql" },
+  { label: "SQLite", icon: "devicon:sqlite" },
+  { label: "SQLAlchemy", icon: "devicon:sqlalchemy" },
   { label: "R", icon: "devicon:r" },
   { label: "C++", icon: "devicon:cplusplus" },
   { label: "LangChain", icon: "logos/langgraph-color.svg", iconType: "local" },
@@ -91,6 +94,7 @@ export const technologies: Skill[] = [
     iconType: "local",
   },
   { label: "Weka", icon: "logos/weka.svg", iconType: "local" },
+  { label: "React", icon: "devicon:react" },
   { label: "Astro", icon: "devicon:astro" },
   { label: "TypeScript", icon: "devicon:typescript" },
   { label: "Tailwind CSS", icon: "devicon:tailwindcss" },
