@@ -31,6 +31,19 @@ export const careerEntries: CareerEntry[] = [
     ],
   },
   {
+    title: "AI/LLM Quality Evaluator",
+    organization: "Mercor Intelligence",
+    logo: "logos/mercor.svg",
+    dateRange: "August 2026 - September 2026",
+    bullets: [
+      "Independent contractor evaluating AI model outputs for top AI labs, providing Data Science expertise to improve models through structured human feedback.",
+      "Evaluated and scored LLM-generated outputs (documents, presentations and spreadsheets) across dimensions including factual accuracy, visual fidelity, editability, and adherence to style guidelines.",
+      "Developed and applied rubrics to assess model response quality, catching hallucinations, formatting errors, and output degradation.",
+      "Provided structured feedback to guide model fine-tuning and prompt improvements.",
+      "Reviewed multi-modal outputs (text, layout, embedded visuals) against source material for accuracy and production readiness.",
+    ],
+  },
+  {
     title: "Junior Data Scientist",
     organization: "Choreograph / WPP",
     logo: "logos/wpp.svg",
